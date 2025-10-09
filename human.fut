@@ -30,7 +30,7 @@ def mkFlag [n] [m] (zeros : *[n]i64) (shp : [m]i64) : [n]i64 =
 def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32) : *[m]f32 =
     let result = replicate m 0f32
     let (_,_,_,_,result) =
-        loop (ks: [m]i32, shp: [m]i32, II1, A, result)
+        loop (ks: [m]i32, shp: [m]i32, II1 : [n]i32, A : [n]f32, result)
         while (length A > 0) do
         -- 1. compute the pivot for each subproblem, e.g., by choosing the
         --    last element. This is a small parallel operation of size m.
@@ -44,7 +44,7 @@ def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32
         --    or equal to the pivot. This is a large-parallel operation of
         --    size n. Hint: use a histogram or reduce_by_index construct.
 
-            let flag = mkFlag (replicate m 0i64) (map i64.i32 shp)
+            let flag = mkFlag (replicate n 0i64) (map i64.i32 shp)
 
             -- (til næste 3 let bindings)
             -- finder A_*_p fra første implementering i pdf'en.
@@ -55,7 +55,7 @@ def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32
                 -- ones er det array på længde A hvor prædikatet er opfyldt
                 -- (altså en af comparisons)
                 let ones = map3 (\ a i ps -> 
-                        a < ps[i]) A II1 (replicate m ps)
+                        a < ps[i]) A II1 (replicate n ps)
                 let scn = sgmScan (+) 0 ones flag |> map (i32.i64)
                 let cnt = map(\i ->
                         if (i == 0) then -1
@@ -64,7 +64,7 @@ def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32
 
             let (peqs, peqos) = 
                 let ones = map3 (\ a i ps -> 
-                        a == ps[i]) A II1 (replicate m ps)
+                        a == ps[i]) A II1 (replicate n ps)
                 let scn = sgmScan (+) 0 ones flag |> map (i32.i64)
                 let cnt = map(\i ->
                         if (i == 0) then -1
@@ -73,7 +73,7 @@ def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32
 
             let (pgths, pgthos) =
                 let ones = map3 ( \ a i ps -> 
-                        a > ps[i]) A II1 (replicate m ps)
+                        a > ps[i]) A II1 (replicate n ps)
                 let scn = sgmScan (+) 0 ones flag |> map (i32.i64)
                 let cnt = map( \i ->
                         if (i == 0) then -1
@@ -144,9 +144,9 @@ def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32
                 |> filter ( \ ( _, o) -> o)
                 |> map ( \ (a, _) -> a)
 
-            let II1' = 
-                let size = reduce (+) 0 ks' |> i64.i32
-                let inds = exScan (+) 0 ks' |> map i64.i32
+            let II1' =
+                let size = reduce (+) 0 ks |> i64.i32
+                let inds = exScan (+) 0 ks |> map i64.i32
                 let flag = mkFlag (replicate size 0) (map i64.i32 ks') |> map bool.i64
                 let vals = scatter (replicate size 0) inds ks'
                 in  sgmScan (+) 0 flag vals
