@@ -36,19 +36,19 @@ def sgmCount [n] [m] (bs : [n]bool) (shp : [m]i32) (flag : [n] bool) : [m]i32 =
     let is = map i32.bool bs
     let scn = sgmScan (+) 0 flag is
     let sgmlast = scan (+) 0 shp |> map (+ (-1))
-    in  map ( \ i -> scn[i] ) sgmlast
+    in  map ( \ i -> scn[max i 0] ) sgmlast
 
 def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32) : *[m]f32 =
     let result = replicate m 0f32
     let (_,_,_,_,result) =
-        loop (ks: [m]i32, shp: [m]i32, II1 : ?[n].[n]i32, A : [n]f32, result)
-        = (copy ks, copy shp, II1, copy A, result)
+        loop (ks: [m]i32, shp: [m]i32, II1, A, result)
+            = (copy ks, copy shp, copy II1, copy A, result)
         while (length A > 0) do
         -- 1. compute the pivot for each subproblem, e.g., by choosing the
         --    last element. This is a small parallel operation of size m.
         
             -- bør ikke være behov for et flag array når II1 eksisterer, tror..
-            let flag = mkFlag (replicate n false) true (map i64.i32 shp)
+            let flag = #[trace] mkFlag (map ( \ _ -> false) A) true (map i64.i32 shp)
 
             let sgmlast = scan (+) 0 shp |> map (+ (-1))
 
@@ -119,7 +119,6 @@ def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32
                                 else r
                 ) kinds result ps
        
-            let n' = (scan (+) 0 shp')[m - 1] |> i64.i32
         -- 5. filter the A and II1 arrays to contain only the elements of
         --  interest of the subproblems that are still active.
             let (A', II1', _, _) =
@@ -130,7 +129,7 @@ def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32
                             case 0  -> lth
                             case 1  -> false
                             case 2  -> gth
-                            case _  -> false) :> [n'](f32, i32, bool, bool)
+                            case _  -> false)
                 in unzip4 filt
 
             in (ks', shp', II1', A', result)
