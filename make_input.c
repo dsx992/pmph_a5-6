@@ -1,32 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define A_MAX 2024
+
 int main(int argc, char** argv) 
 {
-    int shpmax = argc > 1 ? atoi(argv[2]) : 255;
-    int m = atoi(argv[1]);
-    int n;
-    int shp[m];
-    int ks[m];
+    printf ("im here\n");
+    int n = atoi(argv[1]);
+    int m = 0;
 
-    #pragma omp parallel for schedule(static)
-    for (int i = 0; i < m; i++) {
-        int s = rand() % shpmax;
-        s = s < 1 ? 1 : s;
-        int k = rand() % s;
-        k = k < 1 ? 1 : k;
-        n += s;
-        shp[i] = s;
-        ks[i] = k;
-    }
-
+    int ms[n];
     float A[n];
     int II1[n];
 
+    for (int _n = n; _n; m++) {
+        int v = (rand() % _n) + 1;
+        ms[m] = v;
+        _n -= v;
+    }
+    int shp[m];
+    int ks[m];
+
+
+    #pragma omp parallel for schedule(static)
+    for (int i = 0; i < m; i++) {
+        int d = ms[i];
+        shp[i] = d;
+        ks[i] = (rand() % d) + 1;
+    }
+
+
     #pragma omp parallel for schedule(static)
     for (int i = 0; i < n; i++) {
-        int r = rand() % 2024;
-        r = r < 1 ? 1 : r;
+        int r = rand() % (2024 << 2) + 1;
         A[i] = ((float) r) / 2;
     }
 
