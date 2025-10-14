@@ -11,3 +11,5 @@ module naive = {
       let starts = exScan (+) 0 shp
       in  map2 ( \ k s -> sorted[k + s - 1].0 ) ks starts
 }
+
+entry main [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32) : *[m]f32 = naive.rankSearchBatch ks shp II1 A
