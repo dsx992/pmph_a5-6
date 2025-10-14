@@ -12,7 +12,7 @@ test_large: make_input naive
 	filenum=1 ; \
 	for t in $(tests) ; do \
 		./$< $$t > test$$filenum.in ; \
-		cat test$$filenum.in | $^ 1> test$$filenum.out ; \
+		cat test$$filenum.in | ./$^ 1> test$$filenum.out ; \
 		echo "-- compiled input @ test$$filenum.in" ; \
 		echo "-- output @ test$$filenum.out" ; \
 		((filenum=filenum+1)) ; \
