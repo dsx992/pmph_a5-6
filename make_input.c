@@ -5,7 +5,6 @@
 
 int main(int argc, char** argv) 
 {
-    printf ("im here\n");
     int n = atoi(argv[1]);
     int m = 0;
 
