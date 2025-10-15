@@ -1,4 +1,4 @@
-cc=gcc -o1 -fopenmp
+cc=gcc -o1 -fopenmp -pedantic -Wall
 testfile=auto_test.fut
 backend=cuda
 tests := 5 7

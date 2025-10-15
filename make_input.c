@@ -17,9 +17,13 @@ int main(int argc, char** argv)
         ms[m] = v;
         _n -= v;
     }
-    int shp[m];
-    int ks[m];
 
+    printf("n: %i, m: %i\n", n, m);
+
+    int shp[m];
+    printf("efter shp\n");
+    int ks[m];
+    printf("efter ks\n");
 
     #pragma omp parallel for schedule(static)
     for (int i = 0; i < m; i++) {
@@ -28,6 +32,8 @@ int main(int argc, char** argv)
         ks[i] = (rand() % d) + 1;
     }
 
+    printf ("efter shp[i], ks[i]\n");
+
 
     #pragma omp parallel for schedule(static)
     for (int i = 0; i < n; i++) {
@@ -35,12 +41,16 @@ int main(int argc, char** argv)
         A[i] = ((float) r) / 2;
     }
 
+    printf("efter A[i]\n");
+
     #pragma omp parallel for schedule(static)
     for (int i = 0; i < n; i++) {
-        int c, j;
+        int c = 0, j = 0;
         while (!(i < (c += shp[j]))) j++;
         II1[i] = j;
     }
+
+    printf("efter II1[i]\n");
 
     // ks
     printf("[");
@@ -69,6 +79,7 @@ int main(int argc, char** argv)
         printf("%0.2ff32%s", A[i], i != n - 1 ? ", " : "");
     }
     printf("] ");
+
     printf("\n");
     return 0;
 }
