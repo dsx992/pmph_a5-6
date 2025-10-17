@@ -8,13 +8,14 @@ int main(int argc, char** argv)
     int n = atoi(argv[1]);
     int m = 0;
 
-    int ms[n];
-    float A[n];
-    int II1[n];
+    float* A = malloc(sizeof(int) * n);
+    int* II1 = malloc(sizeof(int) * n);
 
     for (int _n = n; _n; m++) {
         int v = (rand() % _n) + 1;
-        ms[m] = v;
+        // Bruger II1 som en temp array lige nu,
+        // dette er ikke dens rigtige værdier
+        II1[m] = v;
         _n -= v;
     }
 
@@ -23,7 +24,7 @@ int main(int argc, char** argv)
 
     #pragma omp parallel for schedule(static)
     for (int i = 0; i < m; i++) {
-        int d = ms[i];
+        int d = II1[i];
         shp[i] = d;
         ks[i] = (rand() % d) + 1;
     }
@@ -70,5 +71,7 @@ int main(int argc, char** argv)
     printf("] ");
 
     printf("\n");
+    free(A);
+    free(II1);
     return 0;
 }
