@@ -1,7 +1,7 @@
 cc=gcc -o1 -fopenmp -pedantic -Wall -std=c99
 testfile=auto_test.fut
 backend=cuda
-tests := 1000 1234 100000 100000 100000
+tests := 10000 100000 1000000
 
 default: test
 

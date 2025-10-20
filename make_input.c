@@ -32,6 +32,8 @@ int main(int argc, char** argv)
     #pragma omp parallel for schedule(static)
     for (int i = 0; i < n; i++) {
         int r = rand() % (2024 << 2) + 1;
+        int a = ((float) r) / 2;
+        a = rand() % 2 ? a * -1 : a;
         A[i] = ((float) r) / 2;
     }
 
