@@ -19,22 +19,29 @@ module human = {
                 let ps  = map (\ x -> if (x == 0) then A[x] else A[x-1]) shp_sc
 
             -- 2.
-                let lths = map2 ( \ a ii -> a < ps[ii] ) A II1
-                let eqts = map2 ( \ a ii -> a == ps[ii]) A II1
-                let gths = map2 ( \ a ii -> a > ps[ii]) A II1
-                
-                let cntlths = sgmCount lths shp flag
-                let cnteqts = sgmCount eqts shp flag
-                let cntgths = sgmCount gths shp flag
+                let zipped          = map2 (\ i x -> (ps[i], x)) II1 A
+                let A_lth_zipped_hist    = hist
+                                            (\ (_, acc) (p, x) -> (p, if x <= p then acc + 1 else acc))
+                                            (0,0)
+                                            (map i64.i32 II1)
+                                            zipped
+                let A_ltheq_cnt         = map (\ (_, x) -> x ) A_lth_zipped_hist
+                let A_gth_cnt           = map2 (\ lth_cnt sh -> sh - lth_cnt)  A_ltheq_cnt shp
 
             -- 3.
-                let kinds =
-                    map4 ( \ k sh lth eqt ->
-                        if      sh == 0         then -1
-                        else if k <= lth        then 0
-                        else if k <= lth + eqt  then 1
-                                                else 2
-                    ) ks shp cntlths cnteqts
+                -- let kinds =
+                --     map4 ( \ k sh lth eqt ->
+                --         if      sh == 0         then -1
+                --         else if k <= lth        then 0
+                --         else if k <= lth + eqt  then 1
+                --                                 else 2
+                --     ) ks shp cntlths cnteqts
+                let kinds = map3 (\ k sh ltheq -> 
+                            if sh == 0          then -1
+                            else if k < ltheq   then 0
+                            else if k == ltheq  then 1
+                            else 2
+                            ) ks shp A_ltheq_cnt  
 
             -- 3.2
                 let shp' = 
