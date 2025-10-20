@@ -1,0 +1,80 @@
+module human = {
+    -- def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32) : *[m]f32 =
+    --     let result = replicate m 0f32
+    --     let (_,_,_,_,result) =
+    --         loop (ks: [m]i32, shp: [m]i32, II1, A, result)
+    --             = (copy ks, copy shp, copy II1, copy A, result)
+    --         while (length A > 0) do
+    --             -- let flag = mkFlag (map ( \ _ -> false) A) true (map i64.i32 shp)
+    --         -- 1. 
+    --             let shp_sc  = scan (+) 0 shp
+    --             let ps  = map (\ x -> if (x == 0) then A[x] else A[x-1]) shp_sc
+
+    --         -- 2.
+    --             let zipped          = map2 (\ i x -> (ps[i], x)) II1 A
+    --             let A_lth_zipped_hist    = hist
+    --                                         (\ (_, acc) (p, x) -> (p, if x <= p then acc + 1 else acc))
+    --                                         (0,0)
+    --                                         (map i64.i32 II1)
+    --                                         zipped
+    --             let A_ltheq_cnt         = map (\ (_, x) -> x ) A_lth_zipped_hist
+    --             let A_gth_cnt           = map2 (\ lth_cnt sh -> sh - lth_cnt)  A_ltheq_cnt shp
+
+    --         -- 3.
+    --             -- let kinds =
+    --             --     map4 ( \ k sh lth eqt ->
+    --             --         if      sh == 0         then -1
+    --             --         else if k <= lth        then 0
+    --             --         else if k <= lth + eqt  then 1
+    --             --                                 else 2
+    --             --     ) ks shp cntlths cnteqts
+    --             let kinds = map3 (\ k sh ltheq -> 
+    --                         if sh == 0          then -1
+    --                         else if k < ltheq   then 0
+    --                         else if k == ltheq  then 1
+    --                         else 2
+    --                         ) ks shp A_ltheq_cnt  
+
+    --         -- 3.2
+    --             let shp' = 
+    --                 map3 ( \ kd lth gth ->  
+    --                     match kd
+    --                     case -1   -> 0
+    --                     case 0    -> lth
+    --                     case 1    -> 0
+    --                     case 2    -> gth
+    --                     case _    -> -1
+    --                 ) kinds cntlths cntgths
+
+    --         -- 3.3
+    --             let ks' =
+    --                 map4 ( \ kd k lth eqt ->
+    --                     match kd
+    --                     case -1   -> -1
+    --                     case 0    -> k
+    --                     case 1    -> -1
+    --                     case 2    -> k - lth - eqt
+    --                     case _    -> -1
+    --                 ) kinds ks cntlths cnteqts
+
+    --         -- 4.
+    --             let result =
+    --                 map3 ( \ kd r p ->
+    --                     if kd == 1  then p
+    --                                 else r
+    --                 ) kinds result ps
+           
+    --         -- 5.
+    --             let (A', II1', _, _) =
+    --                 zip4 A II1 lths gths
+    --                 |> filter ( \ (_, ii, lth, gth) ->
+    --                     match kinds[ii]
+    --                     case -1 -> false
+    --                     case 0  -> lth
+    --                     case 1  -> false
+    --                     case 2  -> gth
+    --                     case _  -> false)
+    --                 |> unzip4
+    --             in (ks', shp', II1', A', result)
+    --     in  result
+-- }
