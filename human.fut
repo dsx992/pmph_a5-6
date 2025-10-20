@@ -14,52 +14,27 @@ module human = {
                 = (copy ks, copy shp, copy II1, copy A, result)
             while (length A > 0) do
             -- 1. 
-                let flag = mkFlag (map ( \ _ -> false) A) true (map i64.i32 shp)
-
-                let sgmlast = scan (+) 0 shp |> map (+ (-1))
-
                 -- finder pivot elementer
                 -- perchance option type?
+                -- heuristik: if length A > 100 then p = avg / 2
+                let sgmlast = scan (+) 0 shp |> map (+ (-1))
                 let ps = map ( \ i -> A[max i 0] ) sgmlast
 
             -- 2.
-                let lths = map2 ( \ a ii -> a < ps[ii] ) A II1
+                let lths = map2 ( \ a ii -> a < ps[ii]) A II1
                 let eqts = map2 ( \ a ii -> a == ps[ii]) A II1
-                let gths = map2 ( \ a ii -> a > ps[ii]) A II1
-                let cntlths = sgmCount lths shp flag
-                let cnteqts = sgmCount eqts shp flag
-                let cntgths = sgmCount gths shp flag
+                let histlth = hist (+) 0 (length ks) (map i64.i32 II1) (map i64.bool lths) :> [m]i64
+                let histeqt = hist (+) 0 (length ks) (map i64.i32 II1) (map i64.bool eqts) :> [m]i64
 
-            -- 3.
-                let kinds =
-                    map4 ( \ k sh lth eqt ->
-                        if      sh == 0         then -1
-                        else if k <= lth        then 0
-                        else if k <= lth + eqt  then 1
-                                                else 2
-                    ) ks shp cntlths cnteqts
-
-            -- 3.2
-                let shp' = 
-                    map3 ( \ kd lth gth ->  
-                        match kd
-                        case -1   -> 0
-                        case 0    -> lth
-                        case 1    -> 0
-                        case 2    -> gth
-                        case _    -> -1
-                    ) kinds cntlths cntgths
-
-            -- 3.3
-                let ks' =
-                    map4 ( \ kd k lth eqt ->
-                        match kd
-                        case -1   -> -1
-                        case 0    -> k
-                        case 1    -> -1
-                        case 2    -> k - lth - eqt
-                        case _    -> -1
-                    ) kinds ks cntlths cnteqts
+            -- 3
+                let (kinds, shp', ks') =
+                    map4 ( \ k sh lth eqt ->      -- kind shp ks
+                        if      sh == 0         then (-1, 0, k)
+                        else if k <= lth        then (0, lth, k)
+                        else if k <= lth + eqt  then (1, 0, -1)
+                                                else (2, sh - lth - eqt, k - lth - eqt)
+                    ) ks shp (map i32.i64 histlth) (map i32.i64 histeqt)
+                    |> unzip3
 
             -- 4.
                 let result =
@@ -70,15 +45,13 @@ module human = {
            
             -- 5.
                 let (A', II1', _, _) =
-                    zip4 A II1 lths gths
-                    |> filter ( \ (_, ii, lth, gth) ->
-                        match kinds[ii]
-                        case -1 -> false
-                        case 0  -> lth
-                        case 1  -> false
-                        case 2  -> gth
-                        case _  -> false)
-                    |> unzip4
+                  zip4 A II1 lths eqts
+                  |> filter ( \ (_, ii, lth, eqt) ->
+                      if      kinds[ii] == -1   then false
+                      else if kinds[ii] == 0    then lth
+                      else if kinds[ii] == 1    then false
+                                                else !(lth && eqt))
+                  |> unzip4
                 in (ks', shp', II1', A', result)
         in  result
 }
