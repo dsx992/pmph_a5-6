@@ -1,5 +1,4 @@
 import "common"
-import "heuristik"
 
 module human = {
     def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32) : *[m]f32 =
@@ -8,26 +7,21 @@ module human = {
             loop (ks: [m]i32, shp: [m]i32, II1, A, result)
                 = (copy ks, copy shp, copy II1, copy A, result)
             while (length A > 0) do
-                let m' = length ks
                 let II1_64 = map i64.i32 II1
             -- 1. 
-                -- finder pivot elementer
-                -- perchance option type?
-                -- heuristik: if length A > x then p = avg / 2
-                -- update: det er altid ass, og hvis x er sat for lavt så stalller den bare totalt
-                let sgmlast = scan (+) 0 shp |> map (+ (-1))
-                let ps = #[trace]
-                    if #[trace] length A > x then
-                        hist (+) 0f32 m' II1_64 A
-                        |> map ( \ h -> h / (length A |> f32.i64)) 
-                    else
-                        map ( \ i -> A[max i 0] ) sgmlast
+                -- finder pivot elementer (gennemsnit)
+                let ps =
+                      let sums = hist (+) 0f32 m II1_64 A
+                      in map2 ( \ su sh ->
+                          if sh == 0 then 0f32
+                          else su / (f32.i32 sh)
+                      ) sums shp
 
             -- 2.
                 let lths = map2 ( \ a ii -> a < ps[ii]) A II1
                 let eqts = map2 ( \ a ii -> a == ps[ii]) A II1
-                let histlth = hist (+) 0 m' II1_64 (map i64.bool lths) :> [m]i64
-                let histeqt = hist (+) 0 m' II1_64 (map i64.bool eqts) :> [m]i64
+                let histlth = hist (+) 0 m II1_64 (map i64.bool lths)
+                let histeqt = hist (+) 0 m II1_64 (map i64.bool eqts)
 
             -- 3
                 let (kinds, shp', ks') =
