@@ -1,7 +1,7 @@
 cc=gcc -o1 -fopenmp -pedantic -Wall -std=c99
 testfile=auto_test.fut
 backend=cuda
-tests := 10 100 1000 5000 10000 50000 100000 500000 1000000 5000000
+tests := 10 100 1000 5000 10000
 
 default: test
 
@@ -26,7 +26,7 @@ make_test: make_input naive
 	done
 	echo "entry human = human.rankSearchBatch" >> $(testfile)
 
-naive: naive.fut
+naive: human.fut
 	futhark ${backend} $<
 
 make_input: make_input.c

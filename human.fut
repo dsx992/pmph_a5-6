@@ -10,12 +10,14 @@ module human = {
                 let II1_64 = map i64.i32 II1
             -- 1. 
                 -- finder pivot elementer (gennemsnit)
+                -- let ps = map ( \ i -> A[max i 0] ) sgmlast :> [m]f32
                 let ps =
-                      let sums = hist (+) 0f32 m II1_64 A
-                      in map2 ( \ su sh ->
-                          if sh == 0 then 0f32
-                          else su / (f32.i32 sh)
-                      ) sums shp
+                    let sgmlast = scan (+) 0 shp |> map (+ (-1)) |> copy
+                    let sums = hist (+) 0f32 m II1_64 A
+                    in  map2 ( \ su sh ->
+                        if sh == 0 then 0f32
+                        else su / (f32.i32 sh)
+                    ) sums shp
 
             -- 2.
                 let lths = map2 ( \ a ii -> a < ps[ii]) A II1
