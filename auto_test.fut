@@ -1,0 +1,28 @@
+import "human"
+-- ==
+-- entry:  human 
+-- compiled input @ test1.in
+-- output @ test1.out
+--
+-- compiled input @ test2.in
+-- output @ test2.out
+--
+-- compiled input @ test3.in
+-- output @ test3.out
+--
+-- compiled input @ test4.in
+-- output @ test4.out
+--
+-- compiled input @ test5.in
+-- output @ test5.out
+--
+-- compiled input @ test6.in
+-- output @ test6.out
+--
+-- compiled input @ test7.in
+-- output @ test7.out
+--
+-- compiled input @ test8.in
+-- output @ test8.out
+--
+entry human = human.rankSearchBatch

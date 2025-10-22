@@ -16,6 +16,8 @@ module human = {
                           if sh == 0 then 0f32
                           else su / (f32.i32 sh)
                       ) sums shp
+                -- let shp_sc = scan (+) 0 shp
+                -- let ps = map3 (\ sh sh_sc ps -> if (sh < 10) then A[max 0 (sh_sc - 1)] else ps) shp shp_sc ps_avg
 
             -- 2.
                 let lths = map2 ( \ a ii -> a < ps[ii]) A II1
