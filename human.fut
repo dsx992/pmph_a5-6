@@ -1,7 +1,7 @@
 import "common"
 
 module human = {
-    def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32) : *[m]f32 =
+    def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]f32) (c: i64): *[m]f32 =
         let result = replicate m 0f32
         let (_,_,_,_,result) =
             loop (ks: [m]i32, shp: [m]i32, II1, A, result)
@@ -9,14 +9,19 @@ module human = {
             while (length A > 0) do
                 let II1_64 = map i64.i32 II1
             -- 1. 
+                let avg = n / m
                 -- finder pivot elementer (gennemsnit)
-                let ps =
-                      let sums = hist (+) 0f32 m II1_64 A
-                      in map2 ( \ su sh ->
-                          if sh == 0 then 0f32
-                          else su / (f32.i32 sh)
-                      ) sums shp
                 -- let shp_sc = scan (+) 0 shp
+                let ps =if (avg > c) 
+                        then
+                            let sums = hist (+) 0f32 m II1_64 A
+                            in map2 ( \ su sh ->
+                                    if sh == 0      then 0f32
+                                                    else su / (f32.i32 sh)
+                            ) sums shp
+                        else 
+                            let shp_sc = scan (+) 0 shp
+                            in map (\ sc -> A[max 0 (sc - 1)]) shp_sc
                 -- let ps = map3 (\ sh sh_sc ps -> if (sh < 10) then A[max 0 (sh_sc - 1)] else ps) shp shp_sc ps_avg
 
             -- 2.
