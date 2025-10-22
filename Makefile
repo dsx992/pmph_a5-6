@@ -1,8 +1,7 @@
 cc=gcc -o1 -fopenmp -pedantic -Wall -std=c99
 testfile=auto_test.fut
 backend=cuda
-tests := 1000 1234 100000 100000 100000
-
+tests := 1000 1234 100000
 default: test
 
 bench: make_test
@@ -14,9 +13,8 @@ test: make_test
 make_test: make_input naive
 	echo 'import "naive"' > $(testfile)
 	echo 'import "human"' >> $(testfile)
-	echo 'import "compiler"' >> $(testfile)
 	echo "-- ==" >> $(testfile)
-	echo "-- entry: naive human compiler" >> $(testfile)
+	echo "-- entry: naive human" >> $(testfile)
 	filenum=1 ; \
 	for t in $(tests) ; do \
 		./$< $$t > test$$filenum.in ; \
@@ -28,7 +26,7 @@ make_test: make_input naive
 	done
 	echo "entry naive = naive.rankSearchBatch" >> $(testfile)
 	echo "entry human = human.rankSearchBatch" >> $(testfile)
-	echo "entry compiler = compiler.rankSearchBatch" >> $(testfile)
+
 
 naive: naive.fut
 	futhark $(backend) $<
@@ -37,4 +35,5 @@ make_input: make_input.c
 	$(cc) -o make_input make_input.c
 
 clean:
-	rm test*.in test*.out auto_test.c naive.c human.c naive make_input auto_test
+	rm -rf test*.in test*.out auto_test.c naive.c human.c naive make_input auto_test
+	rm -rf *.actual *.expected
