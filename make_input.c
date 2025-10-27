@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #define A_MAX 2024
 
@@ -8,7 +9,7 @@ int main(int argc, char** argv)
     int n = atoi(argv[1]);
     int m = 0;
 
-    float* A = malloc(sizeof(int) * n);
+    float* A = malloc(sizeof(float) * n);
     int* II1 = malloc(sizeof(int) * n);
 
     for (int _n = n; _n; m++) {
@@ -44,35 +45,13 @@ int main(int argc, char** argv)
         II1[i] = j;
     }
 
-    // ks
-    printf("[");
-    for (int i = 0; i < m; i++) {
-        printf("%i%s", ks[i], i != m - 1 ? ", " : "");
-    }
-    printf("] ");
+    printf("%i\n", n);
+    printf("%i\n", m);
+    write(stdout, A, sizeof(float) * n);
+    write(stdout, II1, sizeof(int) * n);
+    write(stdout, shp, sizeof(int) * m);
+    write(stdout, ks, sizeof(int) * m);
 
-    // shp
-    printf("[");
-    for (int i = 0; i < m; i++) {
-        printf("%i%s", shp[i], i != m - 1 ? ", " : "");
-    }
-    printf("] ");
-
-    // II1
-    printf("[");
-    for (int i = 0; i < n; i++) {
-        printf("%i%s", II1[i], i != n - 1 ? ", " : "");
-    }
-    printf("] ");
-
-    // A
-    printf("[");
-    for (int i = 0; i < n; i++) {
-        printf("%0.2ff32%s", A[i], i != n - 1 ? ", " : "");
-    }
-    printf("] ");
-
-    printf("\n");
     free(A);
     free(II1);
     return 0;

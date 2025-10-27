@@ -31,6 +31,11 @@ make_test: make_input naive
 naive: naive.fut
 	futhark ${backend} $<
 
+input: format_input make_input
+
+format_input: format_input.c
+	$(cc) -o format_input format_input.c
+
 make_input: make_input.c
 	$(cc) -o make_input make_input.c
 
