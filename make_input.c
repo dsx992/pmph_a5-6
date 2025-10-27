@@ -47,10 +47,10 @@ int main(int argc, char** argv)
 
     printf("%i\n", n);
     printf("%i\n", m);
-    write(stdout, A, sizeof(float) * n);
-    write(stdout, II1, sizeof(int) * n);
-    write(stdout, shp, sizeof(int) * m);
-    write(stdout, ks, sizeof(int) * m);
+    fwrite(A, sizeof(float), n, stdout);
+    fwrite(II1, sizeof(int), n, stdout);
+    fwrite(shp, sizeof(int), m, stdout);
+    fwrite(ks, sizeof(int), m, stdout);
 
     free(A);
     free(II1);
