@@ -1,4 +1,5 @@
 import "human"
+import "common"
 
 -- ==
 -- entry: humanf32
@@ -16,9 +17,11 @@ import "human"
 --            5f32, 4f32, 3f32, 2f32, 1f32,
 --            420f32 ] }
 -- output { [1f32, 5f32, -7f32, 5f32, 420f32] }
-entry humanf32 = human.rankSearchBatch (<) (==) 0f32
+entry humanf32 = 
+    let avg [n] (k : i64) (A : [n]f32) (II1_i64 : [n]i64) : *[k]f32 =
+        hist (+) 0f32 k II1_i64 A
+    in  human.rankSearchBatch (<) (==) 0f32 avg
 
--- ==
 -- entry: humani32
 -- input {  [1, 1] 
 --          [4, 4] 
@@ -34,9 +37,4 @@ entry humanf32 = human.rankSearchBatch (<) (==) 0f32
 --            5i32, 4i32, 3i32, 2i32, 1i32,
 --            420i32 ] }
 -- output { [1i32, 5i32, -7i32, 5i32, 420i32] }
-entry humani32 = human.rankSearchBatch (<) (==) 0i32
-
--- ==
--- compiled input @ blah
-entry blahh = human.rankSearchBatch (<) (==) 0f32
-
+-- entry humani32 = human.rankSearchBatch (<) (==) 0i32
