@@ -36,5 +36,7 @@ entry humanf32 = human.rankSearchBatch (<) (==) 0f32
 -- output { [1i32, 5i32, -7i32, 5i32, 420i32] }
 entry humani32 = human.rankSearchBatch (<) (==) 0i32
 
--- entry naive = naive.rankSearchBatch
--- entry compiler
+-- ==
+-- compiled input @ blah
+entry blahh = human.rankSearchBatch (<) (==) 0f32
+
