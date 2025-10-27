@@ -1,13 +1,11 @@
--- ved ikke hvorfor jeg selv skrev den, findes den ikke også i docs?
-def exScan [n] 't (op : t -> t -> t) (ne : t) (A : [n]t) : [n]t =
-    scan op ne A
-    |> rotate (-1)
-    |> zip (iota n)
-    |> map (\ (i, a) -> if (i == 0) then ne else a)
+def exscan f ne xs =
+  map2 (\i x -> if i == 0 then ne else x)
+       (indices xs)
+       (rotate (-1) (scan f ne xs))
 
 
 def mkFlag 't [n] [m] (zeros : *[n]t) (one : t) (shp : [m]i64) : *[n]t =
-    let inds = exScan (+) 0 shp
+    let inds = exscan (+) 0 shp
     let ones = map (\ _ -> one) shp
     in  scatter zeros inds ones
 
@@ -31,3 +29,9 @@ def max (a : i32) (b : i32) =
     if a > b 
     then a
     else b
+
+def sgmCount [n] [m] (bs : [n]bool) (shp : [m]i32) (flag : [n] bool) : [m]i32 =
+    let is = map i32.bool bs
+    let scn = sgmScan (+) 0 flag is
+    let sgmlast = scan (+) 0 shp |> map (+ (-1))
+    in  map ( \ i -> scn[max i 0] ) sgmlast

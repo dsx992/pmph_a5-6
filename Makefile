@@ -1,7 +1,7 @@
 cc=gcc -o1 -fopenmp -pedantic -Wall -std=c99
 testfile=auto_test.fut
 backend=cuda
-tests := 1000 10000 100000 1000000
+tests :=  100000 1000000 
 default: test
 
 bench: make_test
@@ -24,8 +24,10 @@ make_compiler: make_input make_input_compiler
 		echo "-- compiled input @ test$$filenum.in" >> $(testfile) ; \
 		echo "--" >> $(testfile) ; \
 		((filenum=filenum+1)) ; \
-	done
-	echo "entry human = human.rankSearchBatch" >> $(testfile)
+	done 
+	echo "entry human = " >> $(testfile)
+	echo "let avg [n] (k : i64) (A : [n]f32) (II1_i64 : [n]i64) : *[k]f32 = hist (+) 0f32 k II1_i64 A" >> $(testfile)
+	echo "in  human.rankSearchBatch (<) (==) 0f32 avg" >> $(testfile)
 	echo "-- ==" >> $(testfile)
 	echo "-- entry: compiler " >> $(testfile)
 	filenum=1 ; \
@@ -100,3 +102,4 @@ make_input_compiler: make_input_compiler.c
 clean:
 	rm -f test*.in test*.out auto_test.c naive.c human.c naive make_input auto_test test test.c make_input_compiler 
 	rm -f *.actual *.expected
+	rm -f auto_test.fut
