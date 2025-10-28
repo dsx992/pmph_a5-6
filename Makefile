@@ -105,3 +105,6 @@ clean:
 	rm -f test*.in test*.out auto_test.c naive.c human.c naive make_input auto_test test test.c make_input_compiler 
 	rm -f *.actual *.expected
 	rm -f auto_test.fut
+	rm -f naiveCompiler
+	rm -f naiveCompiler.c
+	
