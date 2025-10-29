@@ -13,11 +13,12 @@ test: make_test
 bench_compiler: make_compiler
 	futhark bench --backend=$(backend) $(testfile)
 
-make_compiler: make_input make_input_compiler
+make_compiler: input make_input_compiler
 	echo 'import "human"' > $(testfile)
+	echo 'import "human_regular"' >> $(testfile)
 	echo 'import "compiler"' >> $(testfile)
 	echo "-- ==" >> $(testfile)
-	echo "-- entry:  human " >> $(testfile)
+	echo "-- entry:  human human_regular" >> $(testfile)
 	filenum=1 ; \
 	for t in $(tests) ; do \
 		./make_input --regular 10000000 100000 | ./format_input > test$$filenum.in ; \
@@ -26,6 +27,7 @@ make_compiler: make_input make_input_compiler
 		((filenum=filenum+1)) ; \
 	done 
 	echo "entry human = human.rankSearchBatch " >> $(testfile)
+	echo "entry human_regular = human_regular.rankSearchBatch" >> $(testfile)
 	echo "-- ==" >> $(testfile)
 	echo "-- entry: compiler " >> $(testfile)
 	filenum=1 ; \
