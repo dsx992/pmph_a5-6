@@ -12,32 +12,18 @@ module human = {
         (A: *[n]t) 
         : *[m]t =
 
-        let zlths = replicate m 0i32
-        let zeqts = replicate m 0i32
-
         let result = replicate m ne
         let (_,_,_,_,_,result) =
             loop (ps : [m]t, ks: [m]i32, shp: [m]i32, II1, A, result)
                 = (ps, ks, shp, II1, A, result)
             while (length A > 0) do
-                let pss = map ( \ ii -> ps[ii]) II1
 
             -- 2.
-                let (lths, eqts) =
-                    map2 ( \ a ps -> (lt a ps, eq a ps)) A pss
-                    |> unzip
-                -- let lths = map2 ( \ a ii -> lt a ps[ii]) A II1
-                -- let eqts = map2 ( \ a ii -> eq a ps[ii]) A II1
-                let (histlth, histeqt) =
-                    zip (map i32.bool lths) (map i32.bool eqts)
-                    |> reduce_by_index
-                        (zip (zlths :> [m]i32) (zeqts :> [m]i32))
-                        ( \ (lt, eq) (lt', eq') -> (lt + lt', eq + eq'))
-                        (0, 0)
-                        (map i64.i32 II1)
-                    |> unzip
-                -- let histlth = hist (+) 0 m II1_64 (map i64.bool lths)
-                -- let histeqt = hist (+) 0 m II1_64 (map i64.bool eqts)
+                let II1_64 = map i64.i32 II1
+                let lths = map2 ( \ a ii -> lt a ps[ii]) A II1
+                let eqts = map2 ( \ a ii -> eq a ps[ii]) A II1
+                let histlth = hist (+) 0 m II1_64 (map i64.bool lths) |> map i32.i64
+                let histeqt = hist (+) 0 m II1_64 (map i64.bool eqts) |> map i32.i64
 
             -- 3
                 let (kinds, shp', ks') =
@@ -52,7 +38,7 @@ module human = {
                 let kiinds =
                     -- let falses = map ( \ _ -> false) A -- getting right size for compiler
                     -- let zeros = map ( \ _ -> 0) A
-                    -- let inds = exScan (+) 0 shp' |> map (i64.i32)
+                    -- let inds = exScan (+) 0 shp |> map i64.i32
                     -- let flag = scatter falses inds (replicate m true)
                     -- let vals = scatter zeros inds kinds
                     -- in sgmScan (+) 0 flag vals
@@ -72,7 +58,7 @@ module human = {
                         if      kiind == -1   then false
                         else if kiind == 0    then lth
                         else if kiind == 1    then false
-                                                  else !(lth || eqt))
+                                              else !(lth || eqt))
                     |> unzip5
             -- 1. 
                 -- finder pivot elementer (gennemsnit)
@@ -86,16 +72,16 @@ module human = {
         (lt : t -> t -> bool) 
         (eq : t -> t -> bool)
         (ne : t)
-        (_ : (k : i64) -> [n]t -> [n]i64 -> *[k]t)
+        (avg : (k : i64) -> [n]t -> [n]i64 -> *[k]t)
         (ks: *[m]i32) 
         (shp: *[m]i32) 
         (II1: *[n]i32) 
         (A: *[n]t) 
         : *[m]t
         =
-        -- let ps = avg m A (map i64.i32 II1)
-        let ps =
-            let shp_sc = scan (+) 0 shp
-            in map (\ sc -> A[max 0 (sc - 1)]) shp_sc
+        let ps = avg m A (map i64.i32 II1)
+        -- let ps =
+        --     let shp_sc = scan (+) 0 shp
+        --     in map (\ sc -> A[max 0 (sc - 1)]) shp_sc
         in innerRankSearchBatch lt eq ne ps ks shp II1 A
 }
