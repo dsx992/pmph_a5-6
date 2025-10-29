@@ -1,7 +1,7 @@
 cc=gcc -o1 -fopenmp -pedantic -Wall -std=c99
 testfile=auto_test.fut
 backend=cuda
-tests := 10000000
+tests := 1000
 default: test
 
 bench: make_test
@@ -21,7 +21,7 @@ make_compiler: input make_input_compiler
 	echo "-- entry:  human human_regular" >> $(testfile)
 	filenum=1 ; \
 	for t in $(tests) ; do \
-		./make_input --regular 10000000 100000 | ./format_input > test$$filenum.in ; \
+		./make_input --regular $$t 100000 | ./format_input > test$$filenum.in ; \
 		echo "-- compiled input @ test$$filenum.in" >> $(testfile) ; \
 		echo "--" >> $(testfile) ; \
 		((filenum=filenum+1)) ; \
@@ -41,23 +41,22 @@ make_compiler: input make_input_compiler
 
 make_compiler_validate: make_input make_input_compiler naive naive_compiler
 	echo 'import "human"' > $(testfile)
+	echo 'import "human_regular"' >> $(testfile)
 	echo 'import "compiler"' >> $(testfile)
 	echo 'import "naive"' >> $(testfile)
 	echo "-- ==" >> $(testfile)
-	echo "-- entry:  human " >> $(testfile)
+	echo "-- entry:  human human_regular" >> $(testfile)
 	filenum=1 ; \
 	for t in $(tests) ; do \
-		./$< $$t > test$$filenum.in ; \
+		./make_input --regular $$t 100 | ./format_input > test$$filenum.in ; \
 		cat test$$filenum.in | ./naive 2> /dev/null 1> test$$filenum.out ; \
 		echo "-- compiled input @ test$$filenum.in" >> $(testfile) ; \
 		echo "-- output @ test$$filenum.out" >> $(testfile) ; \
 		echo "--" >> $(testfile) ; \
 		((filenum=filenum+1)) ; \
 	done
-	echo "entry naive = naive.rankSearchBatch" >> $(testfile)
-	echo "entry human = " >> $(testfile)
-	echo "let avg [n] (k : i64) (A : [n]f32) (II1_i64 : [n]i64) : *[k]f32 = hist (+) 0f32 k II1_i64 A" >> $(testfile)
-	echo "in  human.rankSearchBatch (<) (==) 0f32 avg" >> $(testfile)
+	echo "entry human = human.rankSearchBatch  " >> $(testfile)
+	echo "entry human_regular = human_regular.rankSearchBatch  " >> $(testfile)
 
 	echo "-- ==" >> $(testfile)
 	echo "-- entry: compiler " >> $(testfile)
