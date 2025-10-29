@@ -20,7 +20,7 @@ make_compiler: make_input make_input_compiler
 	echo "-- entry:  human " >> $(testfile)
 	filenum=1 ; \
 	for t in $(tests) ; do \
-		./$< $$t > test$$filenum.in ; \
+		./make_input --regular 10000000 100000 | ./format_input > test$$filenum.in ; \
 		echo "-- compiled input @ test$$filenum.in" >> $(testfile) ; \
 		echo "--" >> $(testfile) ; \
 		((filenum=filenum+1)) ; \
@@ -96,6 +96,11 @@ naive_compiler: naiveCompiler.fut
 make_input: make_input.c
 	$(cc) -o make_input make_input.c
 
+input: format_input make_input
+
+format_input: format_input.c
+	$(cc) -o format_input format_input.c
+
 make_input_compiler: make_input_compiler.c
 	$(cc) -o make_input_compiler make_input_compiler.c
 
@@ -105,4 +110,7 @@ clean:
 	rm -f auto_test.fut
 	rm -f naiveCompiler
 	rm -f naiveCompiler.c
+	rm -f result.prof*
+	rm -f format_input
+	rm -f result.json
 	
