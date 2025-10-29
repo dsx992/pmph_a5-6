@@ -1,0 +1,24 @@
+echo 'import "human"' > auto_test.fut
+echo 'import "human_regular"' >> auto_test.fut
+echo 'import "compiler"' >> auto_test.fut
+echo "-- ==" >> auto_test.fut
+echo "-- entry:  human human_regular" >> auto_test.fut
+filenum=1 ; \
+for t in 100000000 ; do \
+	./make_input --regular $t 100 | ./format_input > test$filenum.in ; \
+	echo "-- compiled input @ test$filenum.in" >> auto_test.fut ; \
+	echo "--" >> auto_test.fut ; \
+	((filenum=filenum+1)) ; \
+done 
+echo "entry human = human.rankSearchBatch " >> auto_test.fut
+echo "entry human_regular = human_regular.rankSearchBatch" >> auto_test.fut
+echo "-- ==" >> auto_test.fut
+echo "-- entry: compiler " >> auto_test.fut
+filenum=1 ; \
+for t in 100000000 ; do \
+	./make_input_compiler $t > testCompiler$filenum.in ; \
+	echo "-- compiled input @ testCompiler$filenum.in" >> auto_test.fut ; \
+	echo "--" >> auto_test.fut ; \
+	((filenum=filenum+1)) ; \
+done
+echo "entry compiler = compiler.rankSearchBatch" >> auto_test.fut	
