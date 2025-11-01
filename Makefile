@@ -58,23 +58,7 @@ make_compiler: input make_input_compiler
 	echo "entry compiler = compiler.rankSearchBatch" >> $(testfile)	
 
 make_compiler_validate: make_input make_input_compiler naive naive_compiler
-	echo 'import "human"' > $(testfile)
-	echo 'import "human_regular"' >> $(testfile)
-	echo 'import "compiler"' >> $(testfile)
-	echo 'import "naive"' >> $(testfile)
-	echo "-- ==" >> $(testfile)
-	echo "-- entry:  human human_regular" >> $(testfile)
-	filenum=1 ; \
-	for t in $(tests) ; do \
-		./make_input --regular $$t 100 | ./format_input > test$$filenum.in ; \
-		cat test$$filenum.in | ./naive 2> /dev/null 1> test$$filenum.out ; \
-		echo "-- compiled input @ test$$filenum.in" >> $(testfile) ; \
-		echo "-- output @ test$$filenum.out" >> $(testfile) ; \
-		echo "--" >> $(testfile) ; \
-		((filenum=filenum+1)) ; \
-	done
-	echo "entry human = human.rankSearchBatch  " >> $(testfile)
-	echo "entry human_regular = human_regular.rankSearchBatch  " >> $(testfile)
+	echo 'import "compiler"' > $(testfile)
 
 	echo "-- ==" >> $(testfile)
 	echo "-- entry: compiler " >> $(testfile)

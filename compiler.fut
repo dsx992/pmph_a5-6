@@ -18,20 +18,18 @@ module compiler = {
             let sgmlast = scan (+) 0 shp |> map (+ (-1))
             let ps = map ( \ i -> A[max i 0] ) sgmlast
 
-            let zipped = zip A II1
-            -- filter A
-            let A_lth_p = segFilter zipped ps (<)
-            let A_eqt_p = segFilter zipped ps (==)
-            let A_gth_p = segFilter zipped ps (>)
+            let zipped = zip3 A II1 (map (\ ii -> ps[ii]) II1)
+            -- use partition to filter A into three arrays
+            let (A_lth_p, A_eqt_p, A_gth_p) = partition2 (\ (a,_ ,p ) -> a < p) (\ (a,_ ,p ) -> a == p) zipped
             
             -- shape of filtered A
-            let lth_shp = hist (+) 0 m  (map (\ (_, i) -> i64.i32 i) A_lth_p 
+            let lth_shp = hist (+) 0 m  (map (\ (_, i, _) -> i64.i32 i) A_lth_p 
                             :> [length A_lth_p]i64)
                             <| replicate (length A_lth_p) 1
-            let eqt_shp = hist (+) 0 m (map (\ (_, i) -> i64.i32 i) A_eqt_p 
+            let eqt_shp = hist (+) 0 m (map (\ (_, i, _) -> i64.i32 i) A_eqt_p 
                             :> [length A_eqt_p]i64) 
                             <| replicate (length A_eqt_p) 1
-            let gth_shp = hist (+) 0 m (map (\ (_, i) -> i64.i32 i) A_gth_p 
+            let gth_shp = hist (+) 0 m (map (\ (_, i, _) -> i64.i32 i) A_gth_p 
                             :> [length A_gth_p]i64)
                             <| replicate (length A_gth_p) 1 
 
