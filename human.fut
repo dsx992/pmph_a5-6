@@ -8,16 +8,16 @@ module human = {
         loop (ks: [m]i32, shp: [m]i32, II1, A, result)
             = (copy ks, copy shp, copy II1, copy A, result)
         while (length A > 0) do
-            let flag = mkFlag (map ( \ _ -> false) A) true (map i64.i32 shp)
             let sgmlast = scan (+) 0 shp |> map (+ (-1))
             let ps = map ( \ i -> A[max i 0] ) sgmlast
 
             let lths = map2 ( \ a ii -> a < ps[ii] ) A II1
             let eqts = map2 ( \ a ii -> a == ps[ii]) A II1
 
-            let cntlths = sgmCount lths shp flag
-            let cnteqts = sgmCount eqts shp flag
-            let cntgths = map3 ( \ sh lt eq -> sh - lt - eq ) shp cntlths cnteqts
+            let (cntlths, cnteqts) =
+                            hist (\(a1, a2) (b1, b2) -> (a1 + b1, a2 + b2)) (0i32, 0i32) m (map i64.i32 II1)
+                                (map2 (\lth eqt -> (i32.bool lth, i32.bool eqt)) lths eqts)
+                            |> unzip
 
             let kinds =
                 map4 ( \ k sh lth eqt ->
@@ -28,14 +28,14 @@ module human = {
                 ) ks shp cntlths cnteqts
 
             let shp' = 
-                map3 ( \ kd lth gth ->  
+                map4 ( \ kd lth eq sh->  
                     match kd
                     case -1   -> 0
                     case 0    -> lth
                     case 1    -> 0
-                    case 2    -> gth
+                    case 2    -> sh - lth - eq
                     case _    -> -1
-                ) kinds cntlths cntgths
+                ) kinds cntlths cnteqts shp
 
             let ks' =
                 map4 ( \ kd k lth eqt ->
