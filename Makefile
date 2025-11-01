@@ -13,7 +13,7 @@ test: make_test
 bench_compiler: make_compiler
 	futhark bench --backend=$(backend) $(testfile)
 
-make_compiler: input make_input_compiler
+make_compiler: input make_input_regular
 	echo 'import "human"' > $(testfile)
 	echo 'import "human_regular"' >> $(testfile)
 	echo 'import "compiler"' >> $(testfile)
@@ -21,23 +21,13 @@ make_compiler: input make_input_compiler
 	echo "-- entry:  human human_regular" >> $(testfile)
 	filenum=1 ; \
 	for t in $(tests) ; do \
-		./make_input --regular $$t 100 | ./format_input > test$$filenum.in ; \
+		./make_input_regular $$t 100 2>/dev/null > test$$filenum.in ; \
 		echo "-- compiled input @ test$$filenum.in" >> $(testfile) ; \
 		echo "--" >> $(testfile) ; \
 		((filenum=filenum+1)) ; \
 	done 
 	echo "entry human = human.rankSearchBatch " >> $(testfile)
 	echo "entry human_regular = human_regular.rankSearchBatch" >> $(testfile)
-	echo "-- ==" >> $(testfile)
-	echo "-- entry: compiler " >> $(testfile)
-	filenum=1 ; \
-	for t in $(tests) ; do \
-		./make_input_compiler $$t > testCompiler$$filenum.in ; \
-		echo "-- compiled input @ testCompiler$$filenum.in" >> $(testfile) ; \
-		echo "--" >> $(testfile) ; \
-		((filenum=filenum+1)) ; \
-	done
-	echo "entry compiler = compiler.rankSearchBatch" >> $(testfile)	
 
 make_compiler_validate: input make_input_compiler naive naive_compiler
 	echo 'import "human"' > $(testfile)
@@ -105,8 +95,11 @@ format_input: format_input.c
 make_input_compiler: make_input_compiler.c
 	$(cc) -o make_input_compiler make_input_compiler.c
 
+make_input_regular: make_input_regular.c
+	$(cc) -o make_input_regular make_input_regular.c
+
 clean:
-	rm -f test*.in test*.out auto_test.c naive.c human.c naive make_input auto_test test test.c make_input_compiler 
+	rm -f test*.in test*.out auto_test.c naive.c human.c naive make_input auto_test test test.c make_input_compiler human_regular.c 
 	rm -f *.actual *.expected
 	rm -f auto_test.fut
 	rm -f naiveCompiler
