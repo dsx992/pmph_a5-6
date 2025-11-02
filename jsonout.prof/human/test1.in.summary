@@ -1,0 +1,23 @@
+Peak memory usage in bytes
+default space: 0
+space 'device': 3728715318
+
+
+                          Cost centre           count             sum             avg             min             max
+---------------------------------------------------------------------------------------------------------------------
+builtin#replicate_f32.replicate_14757               1         21.50μs         21.50μs         21.50μs         21.50μs
+builtin#replicate_i32.replicate_14825             100       1177.60μs         11.78μs          5.12μs        275.46μs
+builtin#replicate_i8.replicate_14799               48        398.34μs          8.30μs          5.12μs         29.70μs
+copy_dev_to_dev                                    92       3084.29μs         33.52μs          5.12μs        392.19μs
+copy_scalar_from_dev                               24        404.48μs         16.85μs         15.36μs         21.50μs
+human.seghist_local_14294                          24       4665.34μs        194.39μs         12.29μs       1358.85μs
+human.segmap_14233                                 24        184.32μs          7.68μs          6.14μs         15.36μs
+human.segmap_14272                                 24       3646.46μs        151.94μs          9.22μs       1201.15μs
+human.segmap_14346                                 24        197.63μs          8.23μs          6.14μs         18.43μs
+human.segmap_14381                                 24       7048.19μs        293.67μs          9.22μs       2349.06μs
+human.segred_large_15044                           16        304.13μs         19.01μs         15.36μs         20.48μs
+human.segred_small_15044                            7         69.63μs          9.95μs          8.19μs         12.29μs
+human.segscan_14207                                24        290.82μs         12.12μs         10.24μs         15.36μs
+human.segscan_14379                                24      11029.50μs        459.56μs         13.31μs       3628.03μs
+---------------------------------------------------------------------------------------------------------------------
+456 events with a total runtime of 32522.24μs

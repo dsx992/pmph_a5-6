@@ -1,7 +1,7 @@
 cc=gcc -o1 -fopenmp -pedantic -Wall -std=c99
 testfile=auto_test.fut
 backend=cuda
-tests := 100000000
+tests := 10000000
 default: test
 
 bench: make_test
@@ -21,7 +21,7 @@ make_compiler: input make_input_regular
 	echo "-- entry:  human human_regular" >> $(testfile)
 	filenum=1 ; \
 	for t in $(tests) ; do \
-		./make_input_regular $$t 100 2>/dev/null > test$$filenum.in ; \
+		./make_input_regular $$t 100000 2>/dev/null > test$$filenum.in ; \
 		echo "-- compiled input @ test$$filenum.in" >> $(testfile) ; \
 		echo "--" >> $(testfile) ; \
 		((filenum=filenum+1)) ; \
@@ -99,7 +99,7 @@ make_input_regular: make_input_regular.c
 	$(cc) -o make_input_regular make_input_regular.c
 
 clean:
-	rm -f test*.in test*.out auto_test.c naive.c human.c naive make_input auto_test test test.c make_input_compiler human_regular.c 
+	rm -f test*.in test*.out auto_test.c naive.c human.c naive make_input auto_test test test.c make_input_compiler
 	rm -f *.actual *.expected
 	rm -f auto_test.fut
 	rm -f naiveCompiler

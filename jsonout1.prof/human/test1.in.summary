@@ -1,0 +1,21 @@
+Peak memory usage in bytes
+default space: 0
+space 'device': 378350698
+
+
+                          Cost centre           count             sum             avg             min             max
+---------------------------------------------------------------------------------------------------------------------
+builtin#replicate_f32.replicate_19478               1         17.41μs         17.41μs         17.41μs         17.41μs
+builtin#replicate_i32.replicate_19514              53       1061.89μs         20.04μs          5.12μs        273.41μs
+builtin#replicate_i8.replicate_19488               42        394.24μs          9.39μs          5.12μs         20.48μs
+copy_dev_to_dev                                    40        625.66μs         15.64μs          9.22μs         51.20μs
+copy_scalar_from_dev                               21        366.59μs         17.46μs         15.36μs         21.50μs
+human.seghist_global_18771                         21       1736.70μs         82.70μs          9.22μs        620.54μs
+human.segmap_18710                                 21        167.94μs          8.00μs          6.14μs         15.36μs
+human.segmap_18749                                 21        480.26μs         22.87μs          9.22μs        124.93μs
+human.segmap_18823                                 21        215.04μs         10.24μs          8.19μs         12.29μs
+human.segmap_18858                                 21        812.03μs         38.67μs          9.22μs        235.52μs
+human.segscan_18684                                21        370.69μs         17.65μs         14.34μs         21.50μs
+human.segscan_18856                                21       1390.59μs         66.22μs         13.31μs        406.53μs
+---------------------------------------------------------------------------------------------------------------------
+304 events with a total runtime of 7639.04μs

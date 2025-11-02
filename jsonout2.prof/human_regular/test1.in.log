@@ -1,0 +1,2329 @@
+Allocating 400000 bytes for mem_18766 in space 'device' (currently allocated: 81045784 bytes).
+Received block of 400000 bytes; now allocated: 81445784 bytes.
+Allocating 13 bytes for status_flags_mem_18877 in space 'device' (currently allocated: 81445784 bytes).
+Received block of 13 bytes; now allocated: 81445797 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 52 bytes for aggregates_mem_18899 in space 'device' (currently allocated: 81445797 bytes).
+Received block of 52 bytes; now allocated: 81445849 bytes.
+Allocating 52 bytes for incprefixes_mem_18901 in space 'device' (currently allocated: 81445849 bytes).
+Received block of 52 bytes; now allocated: 81445901 bytes.
+Event: human_regular.segscan_18215
+Kernel human_regular.segscan_18215 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Allocating 400000 bytes for mem_18769 in space 'device' (currently allocated: 81445901 bytes).
+Received block of 400000 bytes; now allocated: 81845901 bytes.
+Event: human_regular.segmap_18286
+Kernel human_regular.segmap_18286 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18766 (allocated as mem_18766) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 81445901 bytes)
+Allocating 10000000 bytes for mem_18771 in space 'device' (currently allocated: 81445901 bytes).
+Received block of 10000000 bytes; now allocated: 91445901 bytes.
+Allocating 10000000 bytes for mem_18772 in space 'device' (currently allocated: 91445901 bytes).
+Received block of 10000000 bytes; now allocated: 101445901 bytes.
+Event: human_regular.segmap_18368
+Kernel human_regular.segmap_18368 with
+  grid=(39063,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 400000 bytes for mem_18774 in space 'device' (currently allocated: 101445901 bytes).
+Received block of 400000 bytes; now allocated: 101845901 bytes.
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 400000 bytes for mem_18776 in space 'device' (currently allocated: 101845901 bytes).
+Received block of 400000 bytes; now allocated: 102245901 bytes.
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: human_regular.seghist_global_18388
+Kernel human_regular.seghist_global_18388 with
+  grid=(1728,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19032 (allocated as mem_18776) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19034 (allocated as mem_18774) in space 'device': 1 references remaining.
+Allocating 400000 bytes for mem_18780 in space 'device' (currently allocated: 102245901 bytes).
+Received block of 400000 bytes; now allocated: 102645901 bytes.
+Allocating 400000 bytes for mem_18782 in space 'device' (currently allocated: 102645901 bytes).
+Received block of 400000 bytes; now allocated: 103045901 bytes.
+Allocating 400000 bytes for mem_18784 in space 'device' (currently allocated: 103045901 bytes).
+Received block of 400000 bytes; now allocated: 103445901 bytes.
+Allocating 400000 bytes for mem_18786 in space 'device' (currently allocated: 103445901 bytes).
+Received block of 400000 bytes; now allocated: 103845901 bytes.
+Event: human_regular.segmap_18437
+Kernel human_regular.segmap_18437 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18769 (allocated as mem_18769) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 103445901 bytes)
+Unreferencing block mem_18774 (allocated as mem_18774) in space 'device': 1 references remaining.
+Unreferencing block mem_18776 (allocated as mem_18776) in space 'device': 1 references remaining.
+Allocating 80000000 bytes for mem_18789 in space 'device' (currently allocated: 103445901 bytes).
+Received block of 80000000 bytes; now allocated: 183445901 bytes.
+Allocating 80000000 bytes for mem_18791 in space 'device' (currently allocated: 183445901 bytes).
+Received block of 80000000 bytes; now allocated: 263445901 bytes.
+Allocating 2605 bytes for status_flags_mem_19235 in space 'device' (currently allocated: 263445901 bytes).
+Received block of 2605 bytes; now allocated: 263448506 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(11,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 20840 bytes for aggregates_mem_19237 in space 'device' (currently allocated: 263448506 bytes).
+Received block of 20840 bytes; now allocated: 263469346 bytes.
+Allocating 20840 bytes for incprefixes_mem_19239 in space 'device' (currently allocated: 263469346 bytes).
+Received block of 20840 bytes; now allocated: 263490186 bytes.
+Event: human_regular.segscan_18465
+Kernel human_regular.segscan_18465 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18771 (allocated as mem_18771) in space 'device': 0 references remaining.
+10000000 bytes freed (now allocated: 253490186 bytes)
+Unreferencing block mem_18772 (allocated as mem_18772) in space 'device': 0 references remaining.
+10000000 bytes freed (now allocated: 243490186 bytes)
+Unreferencing block mem_18786 (allocated as mem_18786) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 243090186 bytes)
+Event: copy_scalar_from_dev
+
+Allocating 23532824 bytes for mem_18793 in space 'device' (currently allocated: 243090186 bytes).
+Received block of 23532824 bytes; now allocated: 266623010 bytes.
+
+# Copy GPU to GPU
+Shape: [5883206]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Allocating 23532824 bytes for mem_18795 in space 'device' (currently allocated: 266623010 bytes).
+Received block of 23532824 bytes; now allocated: 290155834 bytes.
+
+# Copy GPU to GPU
+Shape: [5883206]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18467
+Kernel human_regular.segmap_18467 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18789 (allocated as mem_18789) in space 'device': 0 references remaining.
+80000000 bytes freed (now allocated: 210155834 bytes)
+Unreferencing block mem_18791 (allocated as mem_18791) in space 'device': 0 references remaining.
+80000000 bytes freed (now allocated: 130155834 bytes)
+Allocating 400000 bytes for mem_18814 in space 'device' (currently allocated: 130155834 bytes).
+Received block of 400000 bytes; now allocated: 130555834 bytes.
+Allocating 400000 bytes for mem_18817 in space 'device' (currently allocated: 130555834 bytes).
+Received block of 400000 bytes; now allocated: 130955834 bytes.
+Allocating 400000 bytes for mem_18822 in space 'device' (currently allocated: 130955834 bytes).
+Received block of 400000 bytes; now allocated: 131355834 bytes.
+Allocating 400000 bytes for mem_18824 in space 'device' (currently allocated: 131355834 bytes).
+Received block of 400000 bytes; now allocated: 131755834 bytes.
+Allocating 400000 bytes for mem_18834 in space 'device' (currently allocated: 131755834 bytes).
+Received block of 400000 bytes; now allocated: 132155834 bytes.
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 132155834 bytes).
+Received block of 13 bytes; now allocated: 132155847 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 132155847 bytes).
+Received block of 52 bytes; now allocated: 132155899 bytes.
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 132155899 bytes).
+Received block of 52 bytes; now allocated: 132155951 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 5883206 bytes for mem_18819 in space 'device' (currently allocated: 132155951 bytes).
+Received block of 10000000 bytes; now allocated: 142155951 bytes.
+Allocating 5883206 bytes for mem_18820 in space 'device' (currently allocated: 142155951 bytes).
+Received block of 10000000 bytes; now allocated: 152155951 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(22982,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(1728,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 152155951 bytes).
+Received block of 400000 bytes; now allocated: 152555951 bytes.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 152555951 bytes).
+Received block of 400000 bytes; now allocated: 152955951 bytes.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 152955951 bytes).
+Received block of 400000 bytes; now allocated: 153355951 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 47065648 bytes for mem_18837 in space 'device' (currently allocated: 153355951 bytes).
+Received block of 80000000 bytes; now allocated: 233355951 bytes.
+Allocating 47065648 bytes for mem_18839 in space 'device' (currently allocated: 233355951 bytes).
+Received block of 80000000 bytes; now allocated: 313355951 bytes.
+Allocating 1533 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 313355951 bytes).
+Received block of 1533 bytes; now allocated: 313357484 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(6,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 12264 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 313357484 bytes).
+Received block of 12264 bytes; now allocated: 313369748 bytes.
+Allocating 12264 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 313369748 bytes).
+Received block of 12264 bytes; now allocated: 313382012 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+10000000 bytes freed (now allocated: 303382012 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+10000000 bytes freed (now allocated: 293382012 bytes)
+Event: copy_scalar_from_dev
+
+Allocating 13643768 bytes for mem_18841 in space 'device' (currently allocated: 293382012 bytes).
+Received block of 13643768 bytes; now allocated: 307025780 bytes.
+
+# Copy GPU to GPU
+Shape: [3410942]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Allocating 13643768 bytes for mem_18843 in space 'device' (currently allocated: 307025780 bytes).
+Received block of 13643768 bytes; now allocated: 320669548 bytes.
+
+# Copy GPU to GPU
+Shape: [3410942]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+80000000 bytes freed (now allocated: 240669548 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+80000000 bytes freed (now allocated: 160669548 bytes)
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18782) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18780) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18793) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18795) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18784) in space 'device': 1 references remaining.
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 160669535 bytes)
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 160669535 bytes).
+Received block of 13 bytes; now allocated: 160669548 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 160669496 bytes)
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 160669496 bytes).
+Received block of 52 bytes; now allocated: 160669548 bytes.
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 160669496 bytes)
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 160669496 bytes).
+Received block of 52 bytes; now allocated: 160669548 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 3410942 bytes for mem_18819 in space 'device' (currently allocated: 160669548 bytes).
+Received block of 4172388 bytes; now allocated: 164841936 bytes.
+Allocating 3410942 bytes for mem_18820 in space 'device' (currently allocated: 164841936 bytes).
+Received block of 4172388 bytes; now allocated: 169014324 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(13324,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(1728,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 169014324 bytes).
+Received block of 400000 bytes; now allocated: 169414324 bytes.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 169414324 bytes).
+Received block of 400000 bytes; now allocated: 169814324 bytes.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 169814324 bytes).
+Received block of 400000 bytes; now allocated: 170214324 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 27287536 bytes for mem_18837 in space 'device' (currently allocated: 170214324 bytes).
+Received block of 80000000 bytes; now allocated: 250214324 bytes.
+Allocating 27287536 bytes for mem_18839 in space 'device' (currently allocated: 250214324 bytes).
+Received block of 80000000 bytes; now allocated: 330214324 bytes.
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+1533 bytes freed (now allocated: 330212791 bytes)
+Allocating 889 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 330212791 bytes).
+Received block of 1228 bytes; now allocated: 330214019 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(4,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+12264 bytes freed (now allocated: 330201755 bytes)
+Allocating 7112 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 330201755 bytes).
+Received block of 7648 bytes; now allocated: 330209403 bytes.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+12264 bytes freed (now allocated: 330197139 bytes)
+Allocating 7112 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 330197139 bytes).
+Received block of 7648 bytes; now allocated: 330204787 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+4172388 bytes freed (now allocated: 326032399 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+4172388 bytes freed (now allocated: 321860011 bytes)
+Event: copy_scalar_from_dev
+
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Allocating 7702852 bytes for mem_18841 in space 'device' (currently allocated: 321860011 bytes).
+Received block of 10000000 bytes; now allocated: 331860011 bytes.
+
+# Copy GPU to GPU
+Shape: [1925713]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Allocating 7702852 bytes for mem_18843 in space 'device' (currently allocated: 331860011 bytes).
+Received block of 10000000 bytes; now allocated: 341860011 bytes.
+
+# Copy GPU to GPU
+Shape: [1925713]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+80000000 bytes freed (now allocated: 261860011 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+80000000 bytes freed (now allocated: 181860011 bytes)
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 181460011 bytes)
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 181060011 bytes)
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 0 references remaining.
+13643768 bytes freed (now allocated: 167416243 bytes)
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 0 references remaining.
+13643768 bytes freed (now allocated: 153772475 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 153372475 bytes)
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 153372462 bytes)
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 153372462 bytes).
+Received block of 13 bytes; now allocated: 153372475 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 153372423 bytes)
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 153372423 bytes).
+Received block of 52 bytes; now allocated: 153372475 bytes.
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 153372423 bytes)
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 153372423 bytes).
+Received block of 52 bytes; now allocated: 153372475 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 1925713 bytes for mem_18819 in space 'device' (currently allocated: 153372475 bytes).
+Received block of 1925713 bytes; now allocated: 155298188 bytes.
+Allocating 1925713 bytes for mem_18820 in space 'device' (currently allocated: 155298188 bytes).
+Received block of 1925713 bytes; now allocated: 157223901 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(7523,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(1728,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 157223901 bytes).
+Received block of 400000 bytes; now allocated: 157623901 bytes.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 157623901 bytes).
+Received block of 400000 bytes; now allocated: 158023901 bytes.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 158023901 bytes).
+Received block of 400000 bytes; now allocated: 158423901 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 15405704 bytes for mem_18837 in space 'device' (currently allocated: 158423901 bytes).
+Received block of 80000000 bytes; now allocated: 238423901 bytes.
+Allocating 15405704 bytes for mem_18839 in space 'device' (currently allocated: 238423901 bytes).
+Received block of 80000000 bytes; now allocated: 318423901 bytes.
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 318422673 bytes)
+Allocating 502 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 318422673 bytes).
+Received block of 1228 bytes; now allocated: 318423901 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(2,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+7648 bytes freed (now allocated: 318416253 bytes)
+Allocating 4016 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 318416253 bytes).
+Received block of 7648 bytes; now allocated: 318423901 bytes.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+7648 bytes freed (now allocated: 318416253 bytes)
+Allocating 4016 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 318416253 bytes).
+Received block of 7648 bytes; now allocated: 318423901 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+1925713 bytes freed (now allocated: 316498188 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+1925713 bytes freed (now allocated: 314572475 bytes)
+Event: copy_scalar_from_dev
+
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Allocating 4172388 bytes for mem_18841 in space 'device' (currently allocated: 314572475 bytes).
+Received block of 4172388 bytes; now allocated: 318744863 bytes.
+
+# Copy GPU to GPU
+Shape: [1043097]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Allocating 4172388 bytes for mem_18843 in space 'device' (currently allocated: 318744863 bytes).
+Received block of 4172388 bytes; now allocated: 322917251 bytes.
+
+# Copy GPU to GPU
+Shape: [1043097]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+80000000 bytes freed (now allocated: 242917251 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+80000000 bytes freed (now allocated: 162917251 bytes)
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 162517251 bytes)
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 162117251 bytes)
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 0 references remaining.
+10000000 bytes freed (now allocated: 152117251 bytes)
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 0 references remaining.
+10000000 bytes freed (now allocated: 142117251 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 141717251 bytes)
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 141717238 bytes)
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 141717238 bytes).
+Received block of 13 bytes; now allocated: 141717251 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 141717199 bytes)
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 141717199 bytes).
+Received block of 52 bytes; now allocated: 141717251 bytes.
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 141717199 bytes)
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 141717199 bytes).
+Received block of 52 bytes; now allocated: 141717251 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 1043097 bytes for mem_18819 in space 'device' (currently allocated: 141717251 bytes).
+Received block of 1925713 bytes; now allocated: 143642964 bytes.
+Allocating 1043097 bytes for mem_18820 in space 'device' (currently allocated: 143642964 bytes).
+Received block of 1925713 bytes; now allocated: 145568677 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(4075,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(1728,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 145568677 bytes).
+Received block of 400000 bytes; now allocated: 145968677 bytes.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 145968677 bytes).
+Received block of 400000 bytes; now allocated: 146368677 bytes.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 146368677 bytes).
+Received block of 400000 bytes; now allocated: 146768677 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 8344776 bytes for mem_18837 in space 'device' (currently allocated: 146768677 bytes).
+Received block of 10000000 bytes; now allocated: 156768677 bytes.
+Allocating 8344776 bytes for mem_18839 in space 'device' (currently allocated: 156768677 bytes).
+Received block of 10000000 bytes; now allocated: 166768677 bytes.
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 166767449 bytes)
+Allocating 272 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 166767449 bytes).
+Received block of 1228 bytes; now allocated: 166768677 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(2,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+7648 bytes freed (now allocated: 166761029 bytes)
+Allocating 2176 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 166761029 bytes).
+Received block of 7648 bytes; now allocated: 166768677 bytes.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+7648 bytes freed (now allocated: 166761029 bytes)
+Allocating 2176 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 166761029 bytes).
+Received block of 7648 bytes; now allocated: 166768677 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+1925713 bytes freed (now allocated: 164842964 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+1925713 bytes freed (now allocated: 162917251 bytes)
+Event: copy_scalar_from_dev
+
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Allocating 2118984 bytes for mem_18841 in space 'device' (currently allocated: 162917251 bytes).
+Received block of 2118984 bytes; now allocated: 165036235 bytes.
+
+# Copy GPU to GPU
+Shape: [529746]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Allocating 2118984 bytes for mem_18843 in space 'device' (currently allocated: 165036235 bytes).
+Received block of 2118984 bytes; now allocated: 167155219 bytes.
+
+# Copy GPU to GPU
+Shape: [529746]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+10000000 bytes freed (now allocated: 157155219 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+10000000 bytes freed (now allocated: 147155219 bytes)
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 146755219 bytes)
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 146355219 bytes)
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 0 references remaining.
+4172388 bytes freed (now allocated: 142182831 bytes)
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 0 references remaining.
+4172388 bytes freed (now allocated: 138010443 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 137610443 bytes)
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 137610430 bytes)
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 137610430 bytes).
+Received block of 13 bytes; now allocated: 137610443 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 137610391 bytes)
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 137610391 bytes).
+Received block of 52 bytes; now allocated: 137610443 bytes.
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 137610391 bytes)
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 137610391 bytes).
+Received block of 52 bytes; now allocated: 137610443 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 529746 bytes for mem_18819 in space 'device' (currently allocated: 137610443 bytes).
+Received block of 1925713 bytes; now allocated: 139536156 bytes.
+Allocating 529746 bytes for mem_18820 in space 'device' (currently allocated: 139536156 bytes).
+Received block of 1925713 bytes; now allocated: 141461869 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(2070,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(1728,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 141461869 bytes).
+Received block of 400000 bytes; now allocated: 141861869 bytes.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 141861869 bytes).
+Received block of 400000 bytes; now allocated: 142261869 bytes.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 142261869 bytes).
+Received block of 400000 bytes; now allocated: 142661869 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 4237968 bytes for mem_18837 in space 'device' (currently allocated: 142661869 bytes).
+Received block of 10000000 bytes; now allocated: 152661869 bytes.
+Allocating 4237968 bytes for mem_18839 in space 'device' (currently allocated: 152661869 bytes).
+Received block of 10000000 bytes; now allocated: 162661869 bytes.
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 162660641 bytes)
+Allocating 138 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 162660641 bytes).
+Received block of 1228 bytes; now allocated: 162661869 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+7648 bytes freed (now allocated: 162654221 bytes)
+Allocating 1104 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 162654221 bytes).
+Received block of 1228 bytes; now allocated: 162655449 bytes.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+7648 bytes freed (now allocated: 162647801 bytes)
+Allocating 1104 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 162647801 bytes).
+Received block of 1533 bytes; now allocated: 162649334 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+1925713 bytes freed (now allocated: 160723621 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+1925713 bytes freed (now allocated: 158797908 bytes)
+Event: copy_scalar_from_dev
+
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Allocating 965524 bytes for mem_18841 in space 'device' (currently allocated: 158797908 bytes).
+Received block of 1925713 bytes; now allocated: 160723621 bytes.
+
+# Copy GPU to GPU
+Shape: [241381]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Allocating 965524 bytes for mem_18843 in space 'device' (currently allocated: 160723621 bytes).
+Received block of 1925713 bytes; now allocated: 162649334 bytes.
+
+# Copy GPU to GPU
+Shape: [241381]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+10000000 bytes freed (now allocated: 152649334 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+10000000 bytes freed (now allocated: 142649334 bytes)
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 142249334 bytes)
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 141849334 bytes)
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 0 references remaining.
+2118984 bytes freed (now allocated: 139730350 bytes)
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 0 references remaining.
+2118984 bytes freed (now allocated: 137611366 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 137211366 bytes)
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 137211353 bytes)
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 137211353 bytes).
+Received block of 13 bytes; now allocated: 137211366 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 137211314 bytes)
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 137211314 bytes).
+Received block of 52 bytes; now allocated: 137211366 bytes.
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 137211314 bytes)
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 137211314 bytes).
+Received block of 52 bytes; now allocated: 137211366 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 241381 bytes for mem_18819 in space 'device' (currently allocated: 137211366 bytes).
+Received block of 400000 bytes; now allocated: 137611366 bytes.
+Allocating 241381 bytes for mem_18820 in space 'device' (currently allocated: 137611366 bytes).
+Received block of 400000 bytes; now allocated: 138011366 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(943,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(943,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 138011366 bytes).
+Received block of 400000 bytes; now allocated: 138411366 bytes.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 138411366 bytes).
+Received block of 400000 bytes; now allocated: 138811366 bytes.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 138811366 bytes).
+Received block of 400000 bytes; now allocated: 139211366 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 1931048 bytes for mem_18837 in space 'device' (currently allocated: 139211366 bytes).
+Received block of 2118984 bytes; now allocated: 141330350 bytes.
+Allocating 1931048 bytes for mem_18839 in space 'device' (currently allocated: 141330350 bytes).
+Received block of 2118984 bytes; now allocated: 143449334 bytes.
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 143448106 bytes)
+Allocating 63 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 143448106 bytes).
+Received block of 128 bytes; now allocated: 143448234 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 143447006 bytes)
+Allocating 504 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 143447006 bytes).
+Received block of 1228 bytes; now allocated: 143448234 bytes.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+1533 bytes freed (now allocated: 143446701 bytes)
+Allocating 504 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 143446701 bytes).
+Received block of 1228 bytes; now allocated: 143447929 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 143047929 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 142647929 bytes)
+Event: copy_scalar_from_dev
+
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Allocating 384040 bytes for mem_18841 in space 'device' (currently allocated: 142647929 bytes).
+Received block of 400000 bytes; now allocated: 143047929 bytes.
+
+# Copy GPU to GPU
+Shape: [96010]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Allocating 384040 bytes for mem_18843 in space 'device' (currently allocated: 143047929 bytes).
+Received block of 400000 bytes; now allocated: 143447929 bytes.
+
+# Copy GPU to GPU
+Shape: [96010]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(864,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+2118984 bytes freed (now allocated: 141328945 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+2118984 bytes freed (now allocated: 139209961 bytes)
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 138809961 bytes)
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 138409961 bytes)
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 0 references remaining.
+1925713 bytes freed (now allocated: 136484248 bytes)
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 0 references remaining.
+1925713 bytes freed (now allocated: 134558535 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 134158535 bytes)
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 134158522 bytes)
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 134158522 bytes).
+Received block of 13 bytes; now allocated: 134158535 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 134158483 bytes)
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 134158483 bytes).
+Received block of 52 bytes; now allocated: 134158535 bytes.
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 134158483 bytes)
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 134158483 bytes).
+Received block of 52 bytes; now allocated: 134158535 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 96010 bytes for mem_18819 in space 'device' (currently allocated: 134158535 bytes).
+Received block of 96010 bytes; now allocated: 134254545 bytes.
+Allocating 96010 bytes for mem_18820 in space 'device' (currently allocated: 134254545 bytes).
+Received block of 96010 bytes; now allocated: 134350555 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(376,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(376,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 134350555 bytes).
+Received block of 400000 bytes; now allocated: 134750555 bytes.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 134750555 bytes).
+Received block of 400000 bytes; now allocated: 135150555 bytes.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 135150555 bytes).
+Received block of 400000 bytes; now allocated: 135550555 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 768080 bytes for mem_18837 in space 'device' (currently allocated: 135550555 bytes).
+Received block of 2118984 bytes; now allocated: 137669539 bytes.
+Allocating 768080 bytes for mem_18839 in space 'device' (currently allocated: 137669539 bytes).
+Received block of 2118984 bytes; now allocated: 139788523 bytes.
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 139788395 bytes)
+Allocating 26 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 139788395 bytes).
+Received block of 128 bytes; now allocated: 139788523 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 139787295 bytes)
+Allocating 208 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 139787295 bytes).
+Received block of 1228 bytes; now allocated: 139788523 bytes.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 139787295 bytes)
+Allocating 208 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 139787295 bytes).
+Received block of 1228 bytes; now allocated: 139788523 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(376,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+96010 bytes freed (now allocated: 139692513 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+96010 bytes freed (now allocated: 139596503 bytes)
+Event: copy_scalar_from_dev
+
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Allocating 127576 bytes for mem_18841 in space 'device' (currently allocated: 139596503 bytes).
+Received block of 127576 bytes; now allocated: 139724079 bytes.
+
+# Copy GPU to GPU
+Shape: [31894]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Allocating 127576 bytes for mem_18843 in space 'device' (currently allocated: 139724079 bytes).
+Received block of 127576 bytes; now allocated: 139851655 bytes.
+
+# Copy GPU to GPU
+Shape: [31894]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(376,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+2118984 bytes freed (now allocated: 137732671 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+2118984 bytes freed (now allocated: 135613687 bytes)
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 135213687 bytes)
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 134813687 bytes)
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 134413687 bytes)
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 134013687 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 133613687 bytes)
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 133613674 bytes)
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 133613674 bytes).
+Received block of 13 bytes; now allocated: 133613687 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 133613635 bytes)
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 133613635 bytes).
+Received block of 52 bytes; now allocated: 133613687 bytes.
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 133613635 bytes)
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 133613635 bytes).
+Received block of 52 bytes; now allocated: 133613687 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 31894 bytes for mem_18819 in space 'device' (currently allocated: 133613687 bytes).
+Received block of 34416 bytes; now allocated: 133648103 bytes.
+Allocating 31894 bytes for mem_18820 in space 'device' (currently allocated: 133648103 bytes).
+Received block of 34416 bytes; now allocated: 133682519 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(125,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(125,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 133682519 bytes).
+Received block of 400000 bytes; now allocated: 134082519 bytes.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 134082519 bytes).
+Received block of 400000 bytes; now allocated: 134482519 bytes.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 134482519 bytes).
+Received block of 400000 bytes; now allocated: 134882519 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 255152 bytes for mem_18837 in space 'device' (currently allocated: 134882519 bytes).
+Received block of 400000 bytes; now allocated: 135282519 bytes.
+Allocating 255152 bytes for mem_18839 in space 'device' (currently allocated: 135282519 bytes).
+Received block of 400000 bytes; now allocated: 135682519 bytes.
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 135682391 bytes)
+Allocating 9 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 135682391 bytes).
+Received block of 128 bytes; now allocated: 135682519 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 135681291 bytes)
+Allocating 72 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 135681291 bytes).
+Received block of 128 bytes; now allocated: 135681419 bytes.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 135680191 bytes)
+Allocating 72 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 135680191 bytes).
+Received block of 128 bytes; now allocated: 135680319 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(125,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+34416 bytes freed (now allocated: 135645903 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+34416 bytes freed (now allocated: 135611487 bytes)
+Event: copy_scalar_from_dev
+
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Allocating 34416 bytes for mem_18841 in space 'device' (currently allocated: 135611487 bytes).
+Received block of 34416 bytes; now allocated: 135645903 bytes.
+
+# Copy GPU to GPU
+Shape: [8604]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Allocating 34416 bytes for mem_18843 in space 'device' (currently allocated: 135645903 bytes).
+Received block of 34416 bytes; now allocated: 135680319 bytes.
+
+# Copy GPU to GPU
+Shape: [8604]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(125,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 135280319 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 134880319 bytes)
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 134480319 bytes)
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 134080319 bytes)
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 0 references remaining.
+127576 bytes freed (now allocated: 133952743 bytes)
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 0 references remaining.
+127576 bytes freed (now allocated: 133825167 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 133425167 bytes)
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 133425154 bytes)
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 133425154 bytes).
+Received block of 13 bytes; now allocated: 133425167 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 133425115 bytes)
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 133425115 bytes).
+Received block of 52 bytes; now allocated: 133425167 bytes.
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 133425115 bytes)
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 133425115 bytes).
+Received block of 52 bytes; now allocated: 133425167 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 8604 bytes for mem_18819 in space 'device' (currently allocated: 133425167 bytes).
+Received block of 12264 bytes; now allocated: 133437431 bytes.
+Allocating 8604 bytes for mem_18820 in space 'device' (currently allocated: 133437431 bytes).
+Received block of 12264 bytes; now allocated: 133449695 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(34,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(34,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 133449695 bytes).
+Received block of 400000 bytes; now allocated: 133849695 bytes.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 133849695 bytes).
+Received block of 400000 bytes; now allocated: 134249695 bytes.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 134249695 bytes).
+Received block of 400000 bytes; now allocated: 134649695 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 68832 bytes for mem_18837 in space 'device' (currently allocated: 134649695 bytes).
+Received block of 96010 bytes; now allocated: 134745705 bytes.
+Allocating 68832 bytes for mem_18839 in space 'device' (currently allocated: 134745705 bytes).
+Received block of 96010 bytes; now allocated: 134841715 bytes.
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134841587 bytes)
+Allocating 3 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 134841587 bytes).
+Received block of 128 bytes; now allocated: 134841715 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134841587 bytes)
+Allocating 24 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 134841587 bytes).
+Received block of 128 bytes; now allocated: 134841715 bytes.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134841587 bytes)
+Allocating 24 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 134841587 bytes).
+Received block of 128 bytes; now allocated: 134841715 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(34,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+12264 bytes freed (now allocated: 134829451 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+12264 bytes freed (now allocated: 134817187 bytes)
+Event: copy_scalar_from_dev
+
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Allocating 7648 bytes for mem_18841 in space 'device' (currently allocated: 134817187 bytes).
+Received block of 7648 bytes; now allocated: 134824835 bytes.
+
+# Copy GPU to GPU
+Shape: [1912]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Allocating 7648 bytes for mem_18843 in space 'device' (currently allocated: 134824835 bytes).
+Received block of 7648 bytes; now allocated: 134832483 bytes.
+
+# Copy GPU to GPU
+Shape: [1912]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(34,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+96010 bytes freed (now allocated: 134736473 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+96010 bytes freed (now allocated: 134640463 bytes)
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 134240463 bytes)
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 133840463 bytes)
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 0 references remaining.
+34416 bytes freed (now allocated: 133806047 bytes)
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 0 references remaining.
+34416 bytes freed (now allocated: 133771631 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 133371631 bytes)
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 133371618 bytes)
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 133371618 bytes).
+Received block of 13 bytes; now allocated: 133371631 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 133371579 bytes)
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 133371579 bytes).
+Received block of 52 bytes; now allocated: 133371631 bytes.
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 133371579 bytes)
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 133371579 bytes).
+Received block of 52 bytes; now allocated: 133371631 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 1912 bytes for mem_18819 in space 'device' (currently allocated: 133371631 bytes).
+Received block of 12264 bytes; now allocated: 133383895 bytes.
+Allocating 1912 bytes for mem_18820 in space 'device' (currently allocated: 133383895 bytes).
+Received block of 12264 bytes; now allocated: 133396159 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(8,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(8,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 133396159 bytes).
+Received block of 400000 bytes; now allocated: 133796159 bytes.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 133796159 bytes).
+Received block of 400000 bytes; now allocated: 134196159 bytes.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 134196159 bytes).
+Received block of 400000 bytes; now allocated: 134596159 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 15296 bytes for mem_18837 in space 'device' (currently allocated: 134596159 bytes).
+Received block of 96010 bytes; now allocated: 134692169 bytes.
+Allocating 15296 bytes for mem_18839 in space 'device' (currently allocated: 134692169 bytes).
+Received block of 96010 bytes; now allocated: 134788179 bytes.
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134788051 bytes)
+Allocating 1 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 134788051 bytes).
+Received block of 128 bytes; now allocated: 134788179 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134788051 bytes)
+Allocating 8 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 134788051 bytes).
+Received block of 128 bytes; now allocated: 134788179 bytes.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134788051 bytes)
+Allocating 8 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 134788051 bytes).
+Received block of 128 bytes; now allocated: 134788179 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(8,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+12264 bytes freed (now allocated: 134775915 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+12264 bytes freed (now allocated: 134763651 bytes)
+Event: copy_scalar_from_dev
+
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Allocating 1228 bytes for mem_18841 in space 'device' (currently allocated: 134763651 bytes).
+Received block of 1228 bytes; now allocated: 134764879 bytes.
+
+# Copy GPU to GPU
+Shape: [307]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Allocating 1228 bytes for mem_18843 in space 'device' (currently allocated: 134764879 bytes).
+Received block of 1228 bytes; now allocated: 134766107 bytes.
+
+# Copy GPU to GPU
+Shape: [307]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(8,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+96010 bytes freed (now allocated: 134670097 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+96010 bytes freed (now allocated: 134574087 bytes)
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 134174087 bytes)
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 133774087 bytes)
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 0 references remaining.
+7648 bytes freed (now allocated: 133766439 bytes)
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 0 references remaining.
+7648 bytes freed (now allocated: 133758791 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 133358791 bytes)
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 133358778 bytes)
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 133358778 bytes).
+Received block of 13 bytes; now allocated: 133358791 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 133358739 bytes)
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 133358739 bytes).
+Received block of 52 bytes; now allocated: 133358791 bytes.
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 133358739 bytes)
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 133358739 bytes).
+Received block of 52 bytes; now allocated: 133358791 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 307 bytes for mem_18819 in space 'device' (currently allocated: 133358791 bytes).
+Received block of 1533 bytes; now allocated: 133360324 bytes.
+Allocating 307 bytes for mem_18820 in space 'device' (currently allocated: 133360324 bytes).
+Received block of 12264 bytes; now allocated: 133372588 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(2,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(2,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 133372588 bytes).
+Received block of 400000 bytes; now allocated: 133772588 bytes.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 133772588 bytes).
+Received block of 400000 bytes; now allocated: 134172588 bytes.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 134172588 bytes).
+Received block of 400000 bytes; now allocated: 134572588 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 2456 bytes for mem_18837 in space 'device' (currently allocated: 134572588 bytes).
+Received block of 96010 bytes; now allocated: 134668598 bytes.
+Allocating 2456 bytes for mem_18839 in space 'device' (currently allocated: 134668598 bytes).
+Received block of 96010 bytes; now allocated: 134764608 bytes.
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134764480 bytes)
+Allocating 1 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 134764480 bytes).
+Received block of 128 bytes; now allocated: 134764608 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134764480 bytes)
+Allocating 8 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 134764480 bytes).
+Received block of 128 bytes; now allocated: 134764608 bytes.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134764480 bytes)
+Allocating 8 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 134764480 bytes).
+Received block of 128 bytes; now allocated: 134764608 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(2,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+1533 bytes freed (now allocated: 134763075 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+12264 bytes freed (now allocated: 134750811 bytes)
+Event: copy_scalar_from_dev
+
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Allocating 128 bytes for mem_18841 in space 'device' (currently allocated: 134750811 bytes).
+Received block of 128 bytes; now allocated: 134750939 bytes.
+
+# Copy GPU to GPU
+Shape: [32]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Allocating 128 bytes for mem_18843 in space 'device' (currently allocated: 134750939 bytes).
+Received block of 1533 bytes; now allocated: 134752472 bytes.
+
+# Copy GPU to GPU
+Shape: [32]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(2,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+96010 bytes freed (now allocated: 134656462 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+96010 bytes freed (now allocated: 134560452 bytes)
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 134160452 bytes)
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 133760452 bytes)
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 133759224 bytes)
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 133757996 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 133357996 bytes)
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 133357983 bytes)
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 133357983 bytes).
+Received block of 13 bytes; now allocated: 133357996 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 133357944 bytes)
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 133357944 bytes).
+Received block of 52 bytes; now allocated: 133357996 bytes.
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 133357944 bytes)
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 133357944 bytes).
+Received block of 52 bytes; now allocated: 133357996 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 32 bytes for mem_18819 in space 'device' (currently allocated: 133357996 bytes).
+Received block of 1228 bytes; now allocated: 133359224 bytes.
+Allocating 32 bytes for mem_18820 in space 'device' (currently allocated: 133359224 bytes).
+Received block of 1228 bytes; now allocated: 133360452 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 133360452 bytes).
+Received block of 400000 bytes; now allocated: 133760452 bytes.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 133760452 bytes).
+Received block of 400000 bytes; now allocated: 134160452 bytes.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 134160452 bytes).
+Received block of 400000 bytes; now allocated: 134560452 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 256 bytes for mem_18837 in space 'device' (currently allocated: 134560452 bytes).
+Received block of 96010 bytes; now allocated: 134656462 bytes.
+Allocating 256 bytes for mem_18839 in space 'device' (currently allocated: 134656462 bytes).
+Received block of 96010 bytes; now allocated: 134752472 bytes.
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134752344 bytes)
+Allocating 1 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 134752344 bytes).
+Received block of 128 bytes; now allocated: 134752472 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134752344 bytes)
+Allocating 8 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 134752344 bytes).
+Received block of 128 bytes; now allocated: 134752472 bytes.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134752344 bytes)
+Allocating 8 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 134752344 bytes).
+Received block of 128 bytes; now allocated: 134752472 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 134751244 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 134750016 bytes)
+Event: copy_scalar_from_dev
+
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Allocating 8 bytes for mem_18841 in space 'device' (currently allocated: 134750016 bytes).
+Received block of 1228 bytes; now allocated: 134751244 bytes.
+
+# Copy GPU to GPU
+Shape: [2]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Allocating 8 bytes for mem_18843 in space 'device' (currently allocated: 134751244 bytes).
+Received block of 1228 bytes; now allocated: 134752472 bytes.
+
+# Copy GPU to GPU
+Shape: [2]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+## Flat copy
+
+Event: copy_dev_to_dev
+
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+96010 bytes freed (now allocated: 134656462 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+96010 bytes freed (now allocated: 134560452 bytes)
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 134160452 bytes)
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 133760452 bytes)
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 133760324 bytes)
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 0 references remaining.
+1533 bytes freed (now allocated: 133758791 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 133358791 bytes)
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 133358778 bytes)
+Allocating 13 bytes for status_flags_mem_19364 in space 'device' (currently allocated: 133358778 bytes).
+Received block of 13 bytes; now allocated: 133358791 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 133358739 bytes)
+Allocating 52 bytes for aggregates_mem_19366 in space 'device' (currently allocated: 133358739 bytes).
+Received block of 52 bytes; now allocated: 133358791 bytes.
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 133358739 bytes)
+Allocating 52 bytes for incprefixes_mem_19368 in space 'device' (currently allocated: 133358739 bytes).
+Received block of 52 bytes; now allocated: 133358791 bytes.
+Event: human_regular.segscan_18481
+Kernel human_regular.segscan_18481 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=31744
+
+Event: human_regular.segmap_18552
+Kernel human_regular.segmap_18552 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 2 bytes for mem_18819 in space 'device' (currently allocated: 133358791 bytes).
+Received block of 128 bytes; now allocated: 133358919 bytes.
+Allocating 2 bytes for mem_18820 in space 'device' (currently allocated: 133358919 bytes).
+Received block of 1533 bytes; now allocated: 133360452 bytes.
+Event: human_regular.segmap_18634
+Kernel human_regular.segmap_18634 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Event: builtin#replicate_i32.replicate_18910
+Kernel builtin#replicate_i32.replicate_18910 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Event: human_regular.seghist_global_18654
+Kernel human_regular.seghist_global_18654 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18828 in space 'device' (currently allocated: 133360452 bytes).
+Received block of 400000 bytes; now allocated: 133760452 bytes.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18830 in space 'device' (currently allocated: 133760452 bytes).
+Received block of 400000 bytes; now allocated: 134160452 bytes.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 2 references remaining.
+Allocating 400000 bytes for mem_18832 in space 'device' (currently allocated: 134160452 bytes).
+Received block of 400000 bytes; now allocated: 134560452 bytes.
+Event: human_regular.segmap_18711
+Kernel human_regular.segmap_18711 with
+  grid=(391,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Allocating 16 bytes for mem_18837 in space 'device' (currently allocated: 134560452 bytes).
+Received block of 96010 bytes; now allocated: 134656462 bytes.
+Allocating 16 bytes for mem_18839 in space 'device' (currently allocated: 134656462 bytes).
+Received block of 96010 bytes; now allocated: 134752472 bytes.
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134752344 bytes)
+Allocating 1 bytes for status_flags_mem_19682 in space 'device' (currently allocated: 134752344 bytes).
+Received block of 128 bytes; now allocated: 134752472 bytes.
+Event: builtin#replicate_i8.replicate_18884
+Kernel builtin#replicate_i8.replicate_18884 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134752344 bytes)
+Allocating 8 bytes for aggregates_mem_19684 in space 'device' (currently allocated: 134752344 bytes).
+Received block of 128 bytes; now allocated: 134752472 bytes.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134752344 bytes)
+Allocating 8 bytes for incprefixes_mem_19686 in space 'device' (currently allocated: 134752344 bytes).
+Received block of 128 bytes; now allocated: 134752472 bytes.
+Event: human_regular.segscan_18747
+Kernel human_regular.segscan_18747 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=30720
+
+Unreferencing block mem_18819 (allocated as mem_18819) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 134752344 bytes)
+Unreferencing block mem_18820 (allocated as mem_18820) in space 'device': 0 references remaining.
+1533 bytes freed (now allocated: 134750811 bytes)
+Event: copy_scalar_from_dev
+
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Allocating 0 bytes for mem_18841 in space 'device' (currently allocated: 134750811 bytes).
+Received block of 128 bytes; now allocated: 134750939 bytes.
+
+# Copy GPU to GPU
+Shape: [0]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Allocating 0 bytes for mem_18843 in space 'device' (currently allocated: 134750939 bytes).
+Received block of 1533 bytes; now allocated: 134752472 bytes.
+
+# Copy GPU to GPU
+Shape: [0]
+Dst offset: 0
+Dst strides: 1
+Src offset: 0
+Src strides: 1
+Event: human_regular.segmap_18749
+Kernel human_regular.segmap_18749 with
+  grid=(1,1,1)
+  block=(256,1,1)
+  shared memory=0
+
+Unreferencing block mem_18837 (allocated as mem_18837) in space 'device': 0 references remaining.
+96010 bytes freed (now allocated: 134656462 bytes)
+Unreferencing block mem_18839 (allocated as mem_18839) in space 'device': 0 references remaining.
+96010 bytes freed (now allocated: 134560452 bytes)
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 1 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 134160452 bytes)
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 133760452 bytes)
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 133759224 bytes)
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 0 references remaining.
+1228 bytes freed (now allocated: 133757996 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 133357996 bytes)
+Unreferencing block mem_18780 (allocated as mem_18780) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 132957996 bytes)
+Unreferencing block mem_18782 (allocated as mem_18782) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 132557996 bytes)
+Unreferencing block mem_18784 (allocated as mem_18784) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 132157996 bytes)
+Unreferencing block mem_18793 (allocated as mem_18793) in space 'device': 0 references remaining.
+23532824 bytes freed (now allocated: 108625172 bytes)
+Unreferencing block mem_18795 (allocated as mem_18795) in space 'device': 0 references remaining.
+23532824 bytes freed (now allocated: 85092348 bytes)
+Unreferencing block mem_18814 (allocated as mem_18814) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 84692348 bytes)
+Unreferencing block mem_18817 (allocated as mem_18817) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 84292348 bytes)
+Unreferencing block mem_18822 (allocated as mem_18822) in space 'device': 1 references remaining.
+Unreferencing block mem_18824 (allocated as mem_18824) in space 'device': 1 references remaining.
+Unreferencing block mem_18834 (allocated as mem_18834) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 83892348 bytes)
+Unreferencing block mem_param_tmp_19349 (allocated as mem_18832) in space 'device': 5 references remaining.
+Unreferencing block mem_param_tmp_19348 (allocated as mem_18843) in space 'device': 3 references remaining.
+Unreferencing block mem_param_tmp_19347 (allocated as mem_18841) in space 'device': 3 references remaining.
+Unreferencing block mem_param_tmp_19346 (allocated as mem_18828) in space 'device': 3 references remaining.
+Unreferencing block mem_param_tmp_19345 (allocated as mem_18830) in space 'device': 3 references remaining.
+Unreferencing block mem_18843 (allocated as mem_18843) in space 'device': 2 references remaining.
+Unreferencing block mem_18841 (allocated as mem_18841) in space 'device': 2 references remaining.
+Unreferencing block incprefixes_mem_19686 (allocated as incprefixes_mem_19686) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 83892220 bytes)
+Unreferencing block aggregates_mem_19684 (allocated as aggregates_mem_19684) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 83892092 bytes)
+Unreferencing block status_flags_mem_19682 (allocated as status_flags_mem_19682) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 83891964 bytes)
+Unreferencing block mem_18832 (allocated as mem_18832) in space 'device': 4 references remaining.
+Unreferencing block mem_18830 (allocated as mem_18830) in space 'device': 2 references remaining.
+Unreferencing block mem_18828 (allocated as mem_18828) in space 'device': 2 references remaining.
+Unreferencing block defunc_0_map_res_subhistos_mem_19481 (allocated as mem_18822) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 83491964 bytes)
+Unreferencing block defunc_0_map_res_subhistos_mem_19479 (allocated as mem_18824) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 83091964 bytes)
+Unreferencing block incprefixes_mem_19368 (allocated as incprefixes_mem_19368) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 83091912 bytes)
+Unreferencing block aggregates_mem_19366 (allocated as aggregates_mem_19366) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 83091860 bytes)
+Unreferencing block status_flags_mem_19364 (allocated as status_flags_mem_19364) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 83091847 bytes)
+Unreferencing block mem_param_18811 (allocated as mem_18832) in space 'device': 3 references remaining.
+Unreferencing block mem_param_18808 (allocated as mem_18843) in space 'device': 1 references remaining.
+Unreferencing block mem_param_18805 (allocated as mem_18841) in space 'device': 1 references remaining.
+Unreferencing block mem_param_18802 (allocated as mem_18828) in space 'device': 1 references remaining.
+Unreferencing block mem_param_18799 (allocated as mem_18830) in space 'device': 1 references remaining.
+Unreferencing block ext_mem_18855 (allocated as mem_18832) in space 'device': 2 references remaining.
+Unreferencing block ext_mem_18856 (allocated as mem_18843) in space 'device': 0 references remaining.
+1533 bytes freed (now allocated: 83090314 bytes)
+Unreferencing block ext_mem_18857 (allocated as mem_18841) in space 'device': 0 references remaining.
+128 bytes freed (now allocated: 83090186 bytes)
+Unreferencing block ext_mem_18858 (allocated as mem_18828) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 82690186 bytes)
+Unreferencing block ext_mem_18859 (allocated as mem_18830) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 82290186 bytes)
+Unreferencing block incprefixes_mem_19239 (allocated as incprefixes_mem_19239) in space 'device': 0 references remaining.
+20840 bytes freed (now allocated: 82269346 bytes)
+Unreferencing block aggregates_mem_19237 (allocated as aggregates_mem_19237) in space 'device': 0 references remaining.
+20840 bytes freed (now allocated: 82248506 bytes)
+Unreferencing block status_flags_mem_19235 (allocated as status_flags_mem_19235) in space 'device': 0 references remaining.
+2605 bytes freed (now allocated: 82245901 bytes)
+Unreferencing block defunc_0_map_res_subhistos_mem_19034 (allocated as mem_18774) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 81845901 bytes)
+Unreferencing block defunc_0_map_res_subhistos_mem_19032 (allocated as mem_18776) in space 'device': 0 references remaining.
+400000 bytes freed (now allocated: 81445901 bytes)
+Unreferencing block incprefixes_mem_18901 (allocated as incprefixes_mem_18901) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 81445849 bytes)
+Unreferencing block aggregates_mem_18899 (allocated as aggregates_mem_18899) in space 'device': 0 references remaining.
+52 bytes freed (now allocated: 81445797 bytes)
+Unreferencing block status_flags_mem_18877 (allocated as status_flags_mem_18877) in space 'device': 0 references remaining.
+13 bytes freed (now allocated: 81445784 bytes)
+Unreferencing block mem_out_18868 (allocated as mem_18832) in space 'device': 1 references remaining.
+runtime: 7423

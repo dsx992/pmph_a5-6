@@ -1,0 +1,27 @@
+Peak memory usage in bytes
+default space: 0
+space 'device': 341869548
+
+
+                          Cost centre           count             sum             avg             min             max
+---------------------------------------------------------------------------------------------------------------------
+builtin#replicate_i32.replicate_18910              28        245.76μs          8.78μs          5.12μs         11.26μs
+builtin#replicate_i8.replicate_18884               28        277.50μs          9.91μs          5.12μs         30.72μs
+copy_dev_to_dev                                    26        428.03μs         16.46μs          9.22μs         48.13μs
+copy_scalar_from_dev                               14        263.17μs         18.80μs         16.38μs         23.55μs
+human_regular.seghist_global_18388                  1        626.69μs        626.69μs        626.69μs        626.69μs
+human_regular.seghist_global_18654                 13        759.81μs         58.45μs          9.22μs        319.49μs
+human_regular.segmap_18286                          1         39.94μs         39.94μs         39.94μs         39.94μs
+human_regular.segmap_18368                          1         91.14μs         91.14μs         91.14μs         91.14μs
+human_regular.segmap_18437                          1          8.19μs          8.19μs          8.19μs          8.19μs
+human_regular.segmap_18467                          1        233.47μs        233.47μs        233.47μs        233.47μs
+human_regular.segmap_18552                         13        208.90μs         16.07μs          6.14μs         93.18μs
+human_regular.segmap_18634                         13        220.16μs         16.94μs         10.24μs         55.30μs
+human_regular.segmap_18711                         13        136.19μs         10.48μs          7.17μs         22.53μs
+human_regular.segmap_18749                         13        403.46μs         31.04μs         10.24μs        138.24μs
+human_regular.segscan_18215                         1         19.46μs         19.46μs         19.46μs         19.46μs
+human_regular.segscan_18465                         1        374.78μs        374.78μs        374.78μs        374.78μs
+human_regular.segscan_18481                        13        220.16μs         16.94μs         14.34μs         19.46μs
+human_regular.segscan_18747                        13        664.58μs         51.12μs         13.31μs        218.11μs
+---------------------------------------------------------------------------------------------------------------------
+194 events with a total runtime of 5221.38μs
