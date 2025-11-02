@@ -19,11 +19,6 @@ int main(int argc, char** argv)
     int* II1 = malloc(sizeof(int) * n);
     int* shp = malloc(sizeof(int) * m);
     int* ks = malloc(sizeof(int) * m);
-    
-    if (!A || !II1 || !shp || !ks) {
-        fprintf(stderr, "Memory allocation failed!\n");
-        return 1;
-    }
 
     long long seg_size = n / m;
     long long remainder = n % m;
