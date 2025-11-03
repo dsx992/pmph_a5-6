@@ -116,4 +116,5 @@ clean:
 	rm -f result.prof*
 	rm -f format_input
 	rm -f result.json
-	
+	rm -f test_flex
+	rm -f test_flex.c	
