@@ -13,7 +13,8 @@ test: make_test
 bench_compiler: make_compiler
 	futhark bench --backend=$(backend) $(testfile)
 
-test_flex_f32: make_flex_f32
+test_flex: test_flex.fut make_flex_f32
+	futhark test --backend=${backend} $<
 	futhark test --backend=$(backend) $(testfile)
 
 make_flex_f32: input make_input naive
@@ -116,4 +117,5 @@ clean:
 	rm -f result.prof*
 	rm -f format_input
 	rm -f result.json
-	
+	rm -f test_flex
+	rm -f test_flex.c	
