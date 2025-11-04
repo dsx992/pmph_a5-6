@@ -4,7 +4,7 @@ def segFilter [m] [n] (A: [n](f32,i32)) (ps: [m]f32) (pred: f32 -> f32 -> bool):
     filter (\ (a, ii) -> pred a ps[ii] ) A
 
 module compiler = {
-    def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (A: [n]f32) : *[m]f32 =
+    def rankSearchBatchComp [m] [n] (ks: [m]i32) (shp: [m]i32) (A: [n]f32) : *[m]f32 =
         let result = replicate m 0f32
 
         let flag =  mkFlag (map ( \ _ -> false) A) true (map i64.i32 shp)
@@ -78,4 +78,7 @@ module compiler = {
 
             in (ks', shp', II1', A', result)
         in  result
+
+    def rankSearchBatch [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: [n]i32) (A: [n]f32): *[m]f32 =
+        rankSearchBatchComp ks shp A
 }
