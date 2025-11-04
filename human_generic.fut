@@ -1,6 +1,6 @@
 import "common"
 
-module human_flex = {
+module human_generic = {
     -- We use any type t
     -- we must pass a neutral element and the function for lees than and equal
     def rankSearchBatch [m] [n] 't (ne: t) (lt: t -> t -> bool) (eq: t -> t -> bool)  (ks: [m]i32) (shp: [m]i32 ) (II1: [n]i32) (A: [n]t) : *[m]t =

@@ -13,14 +13,14 @@ test: make_test
 bench_compiler: make_compiler
 	futhark bench --backend=$(backend) $(testfile)
 
-test_flex: test_flex.fut make_flex_f32
+test_generic: test_generic.fut make_generic_f32
 	futhark test --backend=${backend} $<
 	futhark test --backend=$(backend) $(testfile)
 
-make_flex_f32: input make_input naive
-	echo 'import "flex_f32"' > $(testfile)
+make_generic_f32: input make_input naive
+	echo 'import "generic_f32"' > $(testfile)
 	echo "-- ==" >> $(testfile)
-	echo "-- entry:  human_flex" >> $(testfile)
+	echo "-- entry:  human_generic" >> $(testfile)
 	filenum=1 ; \
 	for t in $(tests) ; do \
 		./make_input --regular $$t 100000 | ./format_input > test$$filenum.in ; \
@@ -30,7 +30,7 @@ make_flex_f32: input make_input naive
 		echo "--" >> $(testfile) ; \
 		((filenum=filenum+1)) ; \
 	done 
-	echo "entry human_flex = flex_f32.run " >> $(testfile)
+	echo "entry human_generic = generic_f32.run " >> $(testfile)
 
 make_compiler: input make_input_compiler
 	echo 'import "human"' > $(testfile)
@@ -117,5 +117,5 @@ clean:
 	rm -f result.prof*
 	rm -f format_input
 	rm -f result.json
-	rm -f test_flex
-	rm -f test_flex.c	
+	rm -f test_generic
+	rm -f test_generic.c	
