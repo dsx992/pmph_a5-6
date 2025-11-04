@@ -1,6 +1,20 @@
 #include "cub/cub.cuh"
 #include "helper.cu.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int rdstdin(void* dest, size_t sz, size_t count) {
+    size_t r = fread(dest, sz, count, stdin);
+    if (count != r) {
+        printf("read %zu bytes, but expected %zu.\n", 
+                r, count);
+        return 0;
+    }
+    else return 1;
+}
+
 template<class Z>
 bool validateZ(Z* A, uint32_t sizeAB) {
     for(uint32_t i = 1; i < sizeAB; i++)
@@ -50,7 +64,7 @@ double sortRedByKeySegmentedCUB( uint32_t* data_keys_in
     int beg_bit = 0;
     int end_bit = 32;
 
-    void * tmp_sort_mem = NULL;
+    void* tmp_sort_mem = NULL;
     size_t tmp_sort_len = 0;
 
     { // sort prelude
@@ -99,48 +113,69 @@ double sortRedByKeySegmentedCUB( uint32_t* data_keys_in
 
 
 int main (int argc, char * argv[]) {
-    if (argc != 3) {
-        printf("Usage: %s <size-of-array> <num-segments>\n", argv[0]);
-        exit(1);
-    }
-    const uint64_t N = atoi(argv[1]);
-    const uint32_t num_segments = atoi(argv[2]);
-
-    if (N % num_segments != 0) {
-        printf("Warning: N should be divisible by num_segments for even segment sizes\n");
-    }
 
     //Allocate and Initialize Host data with random values
-    uint32_t* h_keys  = (uint32_t*) malloc(N*sizeof(uint32_t));
-    uint32_t* h_keys_res  = (uint32_t*) malloc(N*sizeof(uint32_t));
-    uint32_t* h_offsets = (uint32_t*) malloc((num_segments + 1)*sizeof(uint32_t));
-    randomInitNat(h_keys, N, N/10);
-    initSegmentOffsets(h_offsets, num_segments, N);
+    char buff[1024];
+    fgets(buff, 1024, stdin);
+    int n = atoi(buff);
 
-    //Allocate and Initialize Device data
-    uint32_t* d_keys_in;
-    uint32_t* d_keys_out;
-    uint32_t* d_offsets;
-    cudaSucceeded(cudaMalloc((void**) &d_keys_in,  N * sizeof(uint32_t)));
-    cudaSucceeded(cudaMemcpy(d_keys_in, h_keys, N * sizeof(uint32_t), cudaMemcpyHostToDevice));
-    cudaSucceeded(cudaMalloc((void**) &d_keys_out, N * sizeof(uint32_t)));
-    cudaSucceeded(cudaMalloc((void**) &d_offsets, (num_segments + 1) * sizeof(uint32_t)));
-    cudaSucceeded(cudaMemcpy(d_offsets, h_offsets, (num_segments + 1) * sizeof(uint32_t), cudaMemcpyHostToDevice));
+    fgets(buff, 1024, stdin);
+    int m = atoi(buff);
 
-    double elapsed = sortRedByKeySegmentedCUB( d_keys_in, d_keys_out, d_offsets, N, num_segments );
+    uint32_t* h_A = (uint32_t*)malloc(sizeof(uint32_t) * n);
+    uint32_t* h_res = (uint32_t*)malloc(sizeof(uint32_t) * n);
+    int* h_II1 = (int*)malloc(sizeof(int) * n);     // bruges ikke her, men gør til futhark
+    int* h_shp = (int*)malloc(sizeof(int) * m);
+    uint32_t * h_scn = (uint32_t*)malloc(sizeof(int) * m);
+    int* h_ks = (int*)malloc(sizeof(int) * m);
 
-    cudaMemcpy(h_keys_res, d_keys_out, N*sizeof(uint32_t), cudaMemcpyDeviceToHost);
+    if (!rdstdin(h_A, sizeof(uint32_t), n)) return 1;
+    if (!rdstdin(h_II1, sizeof(int), n)) return 1;
+    free(h_II1);
+    if (!rdstdin(h_shp, sizeof(int), m)) return 1;
+    if (!rdstdin(h_ks, sizeof(int), m)) return 1;
+    
+    uint32_t acc = 0;
+    h_scn[0] = 0;
+    for (int i = 0; i < (m - 1); i++) {
+        acc += h_shp[i];
+        h_scn[i + 1] = acc;
+    }
+
+    free(h_shp);
+
+    uint32_t* d_A;
+    uint32_t* d_scn;
+    int* d_ks;
+    uint32_t* d_res;
+
+    cudaSucceeded(cudaMalloc((void**) &d_A, sizeof(uint32_t) * n));
+    cudaSucceeded(cudaMalloc((void**) &d_scn, sizeof(uint32_t) * m));
+    cudaSucceeded(cudaMalloc((void**) &d_ks, sizeof(int) * m));
+    cudaSucceeded(cudaMalloc((void**) &d_res, sizeof(uint32_t) * n));
+    cudaSucceeded(cudaMemcpy(d_A, h_A, sizeof(uint32_t) * n, cudaMemcpyHostToDevice));
+    cudaSucceeded(cudaMemcpy(d_scn, h_scn, sizeof(uint32_t) * m, cudaMemcpyHostToDevice));
+    cudaSucceeded(cudaMemcpy(d_ks, h_ks, sizeof(int) * m, cudaMemcpyHostToDevice));
+
+    double elapsed = sortRedByKeySegmentedCUB( d_A, d_res, d_scn, n, m );
+
+    cudaMemcpy(h_res, d_res, n * sizeof(uint32_t), cudaMemcpyDeviceToHost);
     cudaDeviceSynchronize();
     cudaCheckError();
 
-    bool success = validateSegmentedZ(h_keys_res, h_offsets, num_segments);
+    bool success = validateSegmentedZ(h_res, h_scn, m);
 
     printf("CUB Segmented Sorting for N=%lu, segments=%u runs in: %.2f us, VALID: %d\n", 
-           N, num_segments, elapsed, success);
+           n, m, elapsed, success);
 
-    // Cleanup and closing
-    cudaFree(d_keys_in); cudaFree(d_keys_out); cudaFree(d_offsets);
-    free(h_keys); free(h_keys_res); free(h_offsets);
+    cudaFree(d_A);
+    cudaFree(d_scn);
+    cudaFree(d_ks);
+    cudaFree(d_res);
+    free(h_A);
+    free(h_scn);
+    free(h_ks);
+    free(h_res);
 
     return success ? 0 : 1;
 }
