@@ -12,4 +12,5 @@ module naive = {
       in  map2 ( \ k s -> sorted[k + s - 1].0 ) ks starts
 }
 
+entry main [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]u32) : *[m]f32 = naive.rankSearchBatch ks shp II1 (map f32.u32 A)
 entry naive_f [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: *[n]i32) (A: [n]u32) : *[m]f32 = naive.rankSearchBatch ks shp II1 (map f32.u32 A)
