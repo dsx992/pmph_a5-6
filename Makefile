@@ -5,17 +5,23 @@ CC = gcc -o1 -fopenmp -pedantic -Wall -std=c99
 BACKEND = cuda
 TESTFILE = auto_test.fut
 JSONFILE = jsonout
-ARRAY_SIZES = 100 200
-SEGMENT_SIZES = 10 20
+TEST_ARRAY_SIZES = 100 200
+TEST_SEGMENT_SIZES = 10 20
+BENCH_ARRAY_SIZES = 1000000 10000000
+BENCH_SEGMENT_SIZES = 1000 10000 100000 1000000
 
 # CUB NVIDIA
 CUB = cub-1.8.0
 CUB_FOLDER = ./cub-code_radixsort
 
-default: bench
+default:
+	@echo "Validating the solution..."
+	$(MAKE) -s test
+	@echo "$0Benchmarking the solution..."
+	$(MAKE) -s bench
 
-default_autotest: clean_autotest naive_autotest compiler_autotest human_autotest human_optimal_autotest generic_autotest write_default_input compute_output
-default_autobench: clean_autotest compiler_autobench naive_autobench human_autobench human_optimal_autobench generic_autobench write_default_input 
+default_autotest: clean_autotest naive_autotest compiler_autotest human_autotest human_optimal_autotest generic_autotest write_test_input compute_output
+default_autobench: clean_autotest human_autobench human_optimal_autobench generic_autobench write_bench_input 
 
 # -----------------------------
 # Get help page for our makefile??
@@ -68,8 +74,8 @@ naive: naive.fut
 compute_output: naive
 	@echo "Computing test .out file"
 	@fileindex=1 ; \
-	for t in $(ARRAY_SIZES) ; do \
-		for ss in $(SEGMENT_SIZES) ; do \
+	for t in $(TEST_ARRAY_SIZES) ; do \
+		for ss in $(TEST_SEGMENT_SIZES) ; do \
 			cat "test"$$fileindex"f.in" | ./naive > "test"$$fileindex"f.out" ; \
 			((fileindex++)) ; \
 		done \
@@ -78,13 +84,29 @@ compute_output: naive
 
 all_autotest: 
 
-write_default_input: make_input format_input
-	@echo "ARRAY_SIZES = $(ARRAY_SIZES), SEGMENT_SIZE = $(SEGMENT_SIZE)"
-	@echo "Generating test data."
+write_test_input: make_input format_input
+	@echo "ARRAY_SIZES = $(TEST_ARRAY_SIZES), SEGMENT_SIZES = $(TEST_SEGMENT_SIZES)"
+	@echo "Gnenerating test data."
 	@fileindex=1 ; \
-	for as in $(ARRAY_SIZES) ; do \
-		for ss in $(SEGMENT_SIZES) ; do \
-			if ((as > 500000)) && ((e == 0)) ; then \
+	for as in $(TEST_ARRAY_SIZES) ; do \
+		for ss in $(TEST_SEGMENT_SIZES) ; do \
+			if ((as > 5000)) && ((e == 0)) ; then \
+				echo "Testing for large size arrays is very slow, wait a long time or decrease the size. (SIZE = $$as)" ; \
+			fi ; \
+			./make_input -n $$as -m $$ss -u > test$$fileindex.in ; \
+			cat test$$fileindex.in | ./format_input -u > "test"$$fileindex"f.in" ; \
+			((fileindex++)) ; \
+		done \
+	done
+	@echo "Finished generating test data"
+
+write_bench_input: make_input format_input
+	@echo "ARRAY_SIZES = $(BENCH_ARRAY_SIZES), SEGMENT_SIZES = $(BENCH_SEGMENT_SIZES)"
+	@echo "Gnenerating test data."
+	@fileindex=1 ; \
+	for as in $(BENCH_ARRAY_SIZES) ; do \
+		for ss in $(BENCH_SEGMENT_SIZES) ; do \
+			if ((as > 1000000)) && ((e == 0)) ; then \
 				echo "Generating a large array size will take a bit, please wait. (SIZE = $$as)" ; \
 			fi ; \
 			./make_input -n $$as -m $$ss -u > test$$fileindex.in ; \
@@ -101,8 +123,8 @@ define GENERATE_AUTOTEST
 	echo "-- ==" >> $(TESTFILE); \
 	echo "-- entry: $(1)" >> $(TESTFILE); \
 	fileindex=1; \
-	for t in $(ARRAY_SIZES); do \
-		for ss in $(SEGMENT_SIZES) ; do \
+	for t in $(TEST_ARRAY_SIZES); do \
+		for ss in $(TEST_SEGMENT_SIZES) ; do \
 			echo "-- compiled input @ test"$$fileindex"f.in" >> $(TESTFILE); \
 			echo "-- output @ test"$$fileindex"f.out" >> $(TESTFILE); \
 			echo "--" >> $(TESTFILE); \
@@ -125,7 +147,7 @@ compiler_autotest:
 	@$(call GENERATE_AUTOTEST,compiler,f)
 
 generic_autotest:
-	@$(call GENERATE_AUTOTEST,human_generic,f)
+	@$(call GENERATE_AUTOTEST,human_generic,u)
 
 # -----------------------------
 # Autobenching
@@ -136,8 +158,8 @@ define GENERATE_AUTOBENCH
 	echo "-- ==" >> $(TESTFILE); \
 	echo "-- entry: $(1)" >> $(TESTFILE); \
 	fileindex=1; \
-	for t in $(ARRAY_SIZES); do \
-		for ss in $(SEGMENT_SIZES) ; do \
+	for as in $(BENCH_ARRAY_SIZES) ; do \
+		for ss in $(BENCH_SEGMENT_SIZES) ; do \
 			echo "-- compiled input @ test"$$fileindex"f.in" >> $(TESTFILE); \
 			echo "--" >> $(TESTFILE); \
 			((fileindex++)) ; \
@@ -159,7 +181,7 @@ compiler_autobench:
 	@$(call GENERATE_AUTOBENCH,compiler,f)
 
 generic_autobench:
-	@$(call GENERATE_AUTOBENCH,human_generic,f)
+	@$(call GENERATE_AUTOBENCH,human_generic,u)
 
 # -----------------------------
 # Cub benching
@@ -170,21 +192,21 @@ generic_autobench:
 bench_cub: test1.in
 	@echo "$0"
 	@echo "$$(tput bold)sorting_test.cu:CUB (Reference great implementation):$$(tput sgr0)"
-	@echo "Running CUB sort with ARRAY_SIZES=$(ARRAY_SIZES), SEGMENT_SIZES=$(SEGMENT_SIZES)"
+	@echo "Running CUB sort with ARRAY_SIZES=$(BENCH_ARRAY_SIZES), SEGMENT_SIZES=$(BENCH_SEGMENT_SIZES)"
 	@cd $(CUB_FOLDER) && nvcc -I$(CUB)/cub -o test-cub sorting_test.cu -Wno-deprecated-gpu-targets
-	@fileindex=1 ; \
-	for t in $(ARRAY_SIZES) ; do \
-		for ss in $(SEGMENT_SIZES) ; do \
+	@fileindex=1; \
+	for t in $(BENCH_ARRAY_SIZES) ; do \
+		for ss in $(BENCH_SEGMENT_SIZES) ; do \
 			cat test$$fileindex.in | $(CUB_FOLDER)/test-cub | \
 			while read line; do \
 				if [ -n "$$(echo "$$line" | grep 'runs in:')" ]; then \
 					time=$${line#*runs in: }; \
 					time=$${time% us*}; \
-					echo "test$$fileindex CUB bench SIZE=$$t:	$$timeμs$0"; \
-					((fileindex++)) ; \
+					echo "test$$fileindex.in CUB bench SIZE=$$t SEGMENT_SIZE=$$ss:	$$timeμs$0" ; \
 				fi; \
-			done \
-		done \
+			done ; \
+			((fileindex++)) ; \
+		done ; \
 	done
 
 # -----------------------------
@@ -211,3 +233,5 @@ clean:
 		test_generic test_generic.c 
 # Directory
 	rm -f -r *.prof
+
+	ls ./testing | grep -v \.fut$ | xargs rm
