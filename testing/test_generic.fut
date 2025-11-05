@@ -7,6 +7,15 @@ import "../human_generic"
 --          [0, 0, 0, 0, 1, 1, 1, 1] 
 --          [3f32, 5f32, 4f32, 2f32, 1f32, 2f32, 3f32, 4f32] }
 -- output { [2.0f32, 1.0f32] }
+-- input {  [1, 3, 2, 5, 1] 
+--          [2, 4, 4, 5, 1] 
+--          [0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4] 
+--          [ 1f32, 2f32,
+--            4f32, 5f32, 0f32, 5f32,
+--            -7f32, 2f32, -25f32, 19f32,
+--            5f32, 4f32, 3f32, 2f32, 1f32,
+--            420f32 ] }
+-- output { [1f32, 5f32, -7f32, 5f32, 420f32] }
 
 entry human_genericf32 = human_generic.rankSearchBatch 0f32 (<) (==) (+) (/)
 -- ==
@@ -17,6 +26,15 @@ entry human_genericf32 = human_generic.rankSearchBatch 0f32 (<) (==) (+) (/)
 --          [0, 0, 0, 0, 1, 1, 1, 1] 
 --          [3f64, 5f64, 4f64, 2f64, 1f64, 2f64, 3f64, 4f64] }
 -- output { [2.0f64, 1.0f64] }
+-- input {  [1, 3, 2, 5, 1] 
+--          [2, 4, 4, 5, 1] 
+--          [0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4] 
+--          [ 1f64, 2f64,
+--            4f64, 5f64, 0f64, 5f64,
+--            -7f64, 2f64, -25f64, 19f64,
+--            5f64, 4f64, 3f64, 2f64, 1f64,
+--            420f64 ] }
+-- output { [1f64, 5f64, -7f64, 5f64, 420f64] }
 
 entry human_genericf64 = human_generic.rankSearchBatch 0f64 (<) (==) (+) (\ a b -> f64.f32 (f32.f64 a / b))
 -- ==
@@ -27,6 +45,14 @@ entry human_genericf64 = human_generic.rankSearchBatch 0f64 (<) (==) (+) (\ a b 
 --          [0, 0, 0, 0, 1, 1, 1, 1] 
 --          [3i32, 5i32, 4i32, 2i32, 1i32, 2i32, 3i32, 4i32] }
 -- output { [2i32, 1i32] }
+-- input {  [1, 3, 2, 5, 1] 
+--          [2, 4, 4, 5, 1] 
+--          [0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4] 
+--          [ 1i32, 2i32,
+--            4i32, 5i32, 0i32, 5i32,
+--            -7i32, 2i32, -25i32, 19i32,
+--            5i32, 4i32, 3i32, 2i32, 1i32,
+--            420i32 ] }
+-- output { [1i32, 5i32, -7i32, 5i32, 420i32] }
 
 entry human_generici32 = human_generic.rankSearchBatch 0i32 (<) (==) (+) (\ a b -> i32.f32 (f32.i32 a / b))
- 
