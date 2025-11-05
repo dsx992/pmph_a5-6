@@ -146,4 +146,4 @@ module human_generic = {
             in  result
     }
 
-entry human_generic_f [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: [n]i32) (A: [n]u32) : *[m]f32 = human_generic.rankSearchBatch 0f32 (<) (==) (+) (\ a b -> (a / f32.i32 b)) (ks: [m]i32) (shp: [m]i32) (II1: [n]i32) ((map f32.u32 A): [n]f32)
+entry human_generic_u [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: [n]i32) (A: [n]u32) : *[m]u32 = human_generic.rankSearchBatch 0u32 (<) (==) (+) (\ a b -> (a / u32.i32 b)) (ks: [m]i32) (shp: [m]i32) (II1: [n]i32) (A: [n]u32)
