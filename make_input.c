@@ -33,9 +33,9 @@ int writeIntA(int n)
 
 int writeUintA(int n)
 {
-    size_t sz = 2024;
+    size_t sz = 1 << 20;
     time_t seed = time(NULL);
-    unsigned int buf[sz];
+    unsigned int *buf = malloc(sizeof(unsigned int) * sz);
 
     srand(seed);
     for (int i = 0; i < n; i+=sz) {
@@ -47,14 +47,15 @@ int writeUintA(int n)
         int min = rest < sz ? rest : sz;
         fwrite(buf, sizeof(int), min, stdout);
     }
+    free(buf);
     return 0;
 }
 
 int writeFloatA(int n)
 {
-    size_t sz = 2024;
+    size_t sz = 1 << 20;
     time_t seed = time(NULL);
-    float buf[sz];
+    float *buf = malloc(sizeof(float) * sz);
 
     srand(seed);
     for (int i = 0; i < n; i+=sz) {
@@ -66,6 +67,7 @@ int writeFloatA(int n)
         int min = rest < sz ? rest : sz;
         fwrite(buf, sizeof(int), min, stdout);
     }
+    free(buf);
     return 0;
 }
 
@@ -116,7 +118,6 @@ int main(int argc, char** argv)
     if (m) {
         shp = malloc(sizeof(int) * m);
         int r = n / m;
-        #pragma omp parallel for schedule(static)
         for (int i = 0; i < m; i++) {
             shp[i] = r;
         }
