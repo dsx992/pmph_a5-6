@@ -1,7 +1,7 @@
-import "../human_optimal"
+import "../naive"
 
 -- ==
--- entry: human_optimal
+-- entry: naive
 -- input {  
 --          [1, 1] 
 --          [4, 4] 
@@ -18,4 +18,4 @@ import "../human_optimal"
 --            420f32 ] }
 -- output { [1f32, 5f32, -7f32, 5f32, 420f32] }
 
-entry human_optimal = human_optimal.rankSearchBatch
+entry naive = naive.rankSearchBatch

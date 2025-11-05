@@ -17,7 +17,7 @@ import "../human_generic"
 --            420f32 ] }
 -- output { [1f32, 5f32, -7f32, 5f32, 420f32] }
 
-entry human_genericf32 = human_generic.rankSearchBatch 0f32 (<) (==) (+) (/)
+entry human_genericf32 = human_generic.rankSearchBatch 0f32 (<) (==) (+) (\ a b -> (a / f32.i32 b))
 -- ==
 -- entry: human_genericf64
 -- input {  
@@ -36,7 +36,7 @@ entry human_genericf32 = human_generic.rankSearchBatch 0f32 (<) (==) (+) (/)
 --            420f64 ] }
 -- output { [1f64, 5f64, -7f64, 5f64, 420f64] }
 
-entry human_genericf64 = human_generic.rankSearchBatch 0f64 (<) (==) (+) (\ a b -> f64.f32 (f32.f64 a / b))
+entry human_genericf64 = human_generic.rankSearchBatch 0f64 (<) (==) (+) (\ a b -> (a / f64.i32 b))
 -- ==
 -- entry: human_generici32
 -- input {  
@@ -55,4 +55,4 @@ entry human_genericf64 = human_generic.rankSearchBatch 0f64 (<) (==) (+) (\ a b 
 --            420i32 ] }
 -- output { [1i32, 5i32, -7i32, 5i32, 420i32] }
 
-entry human_generici32 = human_generic.rankSearchBatch 0i32 (<) (==) (+) (\ a b -> i32.f32 (f32.i32 a / b))
+entry human_generici32 = human_generic.rankSearchBatch 0i32 (<) (==) (+) (\ a b -> (a / b))
