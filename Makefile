@@ -41,6 +41,12 @@ help:
 # User targets
 # -----------------------------
 
+validate:
+	futhark test --backend=$(BACKEND) testing/*.fut
+
+clean_testing:
+	ls testing | grep -v \.fut$ | sed -e 's/\(.*\)/testing\/\1/' | xargs rm
+
 test: default_autotest
 	futhark test --backend=$(BACKEND) $(TESTFILE)
 	@$(MAKE) -s test_generic_extra

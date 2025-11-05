@@ -81,4 +81,4 @@ module compiler = {
 }
 
 
-entry compiler_f [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: [n]i32) (A: [n]u32) : *[m]f32 = compiler.rankSearchBatch ks shp (map f32.u32 A)
+entry compiler_f [m] [n] (ks: [m]i32) (shp: [m]i32) (_: [n]i32) (A: [n]u32) : *[m]f32 = compiler.rankSearchBatch ks shp (map f32.u32 A)
