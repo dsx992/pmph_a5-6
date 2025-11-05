@@ -13,20 +13,21 @@ enum Type {
 
 int writeIntA(int n)
 {
-    size_t sz = 2024;
+    size_t sz = 1 << 20;
     time_t seed = time(NULL);
-    int buf[sz];
+    int *buf = malloc(sizeof(int) * sz);
 
+    srand(seed);
     for (int i = 0; i < n; i+=sz) {
         #pragma omp parallel for schedule(static)
         for (int j = 0; j < sz; j++) {
-            srand(seed + j);
             buf[j] = rand() - (RAND_MAX / 2);
         }
         int rest = n - i;
         int min = rest < sz ? rest : sz;
         fwrite(buf, sizeof(int), min, stdout);
     }
+    free(buf);
     return 0;
 }
 
@@ -36,10 +37,10 @@ int writeUintA(int n)
     time_t seed = time(NULL);
     unsigned int buf[sz];
 
+    srand(seed);
     for (int i = 0; i < n; i+=sz) {
         #pragma omp parallel for schedule(static)
         for (int j = 0; j < sz; j++) {
-            srand(seed + j);
             buf[j] = rand() - (RAND_MAX / 2);
         }
         int rest = n - i;
@@ -55,10 +56,10 @@ int writeFloatA(int n)
     time_t seed = time(NULL);
     float buf[sz];
 
+    srand(seed);
     for (int i = 0; i < n; i+=sz) {
         #pragma omp parallel for schedule(static)
         for (int j = 0; j < sz; j++) {
-            srand(seed + j);
             buf[j] = rand() - (RAND_MAX / 2);
         }
         int rest = n - i;
