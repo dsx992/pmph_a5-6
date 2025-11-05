@@ -76,10 +76,6 @@ module human_optimal = {
             loop (ks: [m]i32, shp: [m]i32, II1, A, result)
                 = (copy ks', copy shp', copy II1', copy A', copy result)
             while (length A > 0) do
-                -- let sgmlast = scan (+) 0 shp |> map (+ (-1))
-                -- let ps = map ( \ i -> A[max i 0] ) sgmlast
-                -- let ps = map ( \ i -> if i >= 0 then A[i] else 0) sgmlast
-
                 let offsets = exscan (+) 0 shp
                 let ps = map2 (\off sz -> 
                     if sz == 0 then 0f32

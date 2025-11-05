@@ -7,8 +7,8 @@ TESTFILE = auto_test.fut
 JSONFILE = jsonout
 TEST_ARRAY_SIZES = 100 200
 TEST_SEGMENT_COUNTS = 10 20
-BENCH_ARRAY_SIZES = 1000000 5000000 10000000
-BENCH_SEGMENT_COUNTS = 1 10 100 1000 10000 100000 1000000
+BENCH_ARRAY_SIZES = 524288 1048576
+BENCH_SEGMENT_COUNTS = 4 64 1024 16384
 
 # CUB NVIDIA
 CUB = cub-1.8.0
@@ -24,14 +24,13 @@ default_autotest: clean_autotest naive_autotest compiler_autotest human_autotest
 default_autobench: clean_autotest human_autobench human_optimal_autobench generic_autobench write_bench_input 
 
 # -----------------------------
-# Get help page for our makefile??
+# Get help page for our makefile
 # -----------------------------
 help:
 	@echo "Used to make, test and benchmark our solution, as well as CUB from Nvidia.$0"
 	@echo "make      	- Makes and runs all required files for a full benchmarking of most of our solutions (naive is not included)"
 	@echo "make help 	- Shows this page"
 
-# Naive burde nok være med her faktisk
 	@echo "make test	- Makes and runs all required files for a full test of our solutions (naive is not included)"
 
 	@echo "make profile	- Makes and runs all required files for a full profileing of our solutions"
@@ -112,7 +111,7 @@ write_bench_input: make_input format_input
 	@fileindex=1 ; \
 	for as in $(BENCH_ARRAY_SIZES) ; do \
 		for ss in $(BENCH_SEGMENT_COUNTS) ; do \
-			if ((as > 500000)) && ((e == 0)) ; then \
+			if ((as > 5000000)) && ((e == 0)) ; then \
 				echo "Generating a large array size will take a bit, please wait. (TEST = test$$fileindex.in, SIZE = $$as, SEGMENT_COUNT = $$ss)" ; \
 			fi ; \
 			./make_input -n $$as -m $$ss -u > test$$fileindex.in ; \
@@ -208,7 +207,7 @@ bench_cub: test1.in
 				if [ -n "$$(echo "$$line" | grep 'runs in:')" ]; then \
 					time=$${line#*runs in: }; \
 					time=$${time% us*}; \
-					echo "test$$fileindex.in CUB bench SIZE=$$t SEGMENT_SIZE=$$ss:	$$timeμs$0" ; \
+					echo "test$$fileindex.in CUB bench SIZE=$$t SEGMENT_COUNT=$$ss:	$$timeμs$0" ; \
 				fi; \
 			done ; \
 			((fileindex++)) ; \
@@ -230,14 +229,12 @@ input: format_input make_input
 # -----------------------------
 # Cleanup
 # -----------------------------
-clean:
+clean: clean_testing
 # Filer
-	rm -f test*.in test*.out auto_test.c naive.c human.c \
+	@rm -f test*.in test*.out auto_test.c naive.c human.c \
 		naive make_input auto_test test test.c make_input_compiler \
 		*.actual *.expected auto_test.fut naiveCompiler naiveCompiler.c \
 		format_input result.json *.json ./cub-code_radixsort/test-cub \
 		test_generic test_generic.c 
 # Directory
-	rm -f -r *.prof
-
-	ls ./testing | grep -v \.fut$ | xargs rm
+	@rm -f -r *.prof
