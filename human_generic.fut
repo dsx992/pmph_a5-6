@@ -12,7 +12,7 @@ module human_generic = {
                 else b 
     -- We use any type t
     -- we must pass a neutral element and the function for lees than and equal
-    def rankSearchBatch [m] [n] 't (ne: t) (lt: t -> t -> bool) (eq: t -> t -> bool) (add: t -> t -> t) (div: t -> f32 -> t) (ks: [m]i32) (shp: [m]i32 ) (II1: [n]i32) (A: [n]t) : *[m]t =
+    def rankSearchBatch [m] [n] 't (ne: t) (lt: t -> t -> bool) (eq: t -> t -> bool) (add: t -> t -> t) (div: t -> i32 -> t) (ks: [m]i32) (shp: [m]i32 ) (II1: [n]i32) (A: [n]t) : *[m]t =
         let result = replicate m ne
         -- map reduce to find sum of each sub array
         let flag' = mkFlag (map ( \ _ -> false) A) true (map i64.i32 shp)
@@ -22,7 +22,7 @@ module human_generic = {
         let sum   = map2 (\ sh ip1 -> if (sh==0) then ne else sc[ip1-1]) shp indsp
 
         -- pivots are average values to cut away half
-        let ps    = map2 (\ sh su -> div su sh) (map (f32.i32) shp) sum
+        let ps    = map2 (\ sh su -> div su sh) shp sum
 
         -- find new values
 
@@ -146,4 +146,4 @@ module human_generic = {
             in  result
     }
 
-entry human_generic_f [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: [n]i32) (A: [n]u32) : *[m]f32 = human_generic.rankSearchBatch 0f32 (<) (==) (+) (/) (ks: [m]i32) (shp: [m]i32) (II1: [n]i32) ((map f32.u32 A): [n]f32)
+entry human_generic_f [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: [n]i32) (A: [n]u32) : *[m]f32 = human_generic.rankSearchBatch 0f32 (<) (==) (+) (\ a b -> (a / f32.i32 b)) (ks: [m]i32) (shp: [m]i32) (II1: [n]i32) ((map f32.u32 A): [n]f32)
