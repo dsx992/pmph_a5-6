@@ -1,4 +1,4 @@
-import "human_generic"
+import "../human_generic"
 -- ==
 -- entry: human_genericf32
 -- input {  

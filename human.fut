@@ -64,3 +64,5 @@ module human= {
             in (ks', shp', II1', A', result)
         in  result
 }
+
+entry human_f [m] [n] (ks: [m]i32) (shp: [m]i32) (II1: [n]i32) (A: [n]u32) : *[m]f32 = human.rankSearchBatch ks shp II1 (map f32.u32 A)

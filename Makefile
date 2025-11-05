@@ -4,11 +4,18 @@
 CC = gcc -o1 -fopenmp -pedantic -Wall -std=c99
 BACKEND = cuda
 TESTFILE = auto_test.fut
-TESTS = 100
-SEGMENT_SIZE = 10
 JSONFILE = jsonout
+ARRAY_SIZES = 100 200
+SEGMENT_SIZE = 10
 
-default: clean_autotest all_autotest write_default_input compute_output bench bench_cub
+# CUB NVIDIA
+CUB = cub-1.8.0
+CUB_FOLDER = ./cub-code_radixsort
+
+default: bench
+
+default_autotest: clean_autotest compiler_autotest human_autotest human_optimal_autotest generic_autotest write_default_input compute_output
+default_autobench: clean_autotest compiler_autobench naive_autobench human_autobench human_optimal_autobench generic_autobench write_default_input 
 
 # -----------------------------
 # Get help page for our makefile??
@@ -21,51 +28,30 @@ help:
 # Naive burde nok være med her faktisk
 	@echo "make test	- Makes and runs all required files for a full test of our solutions (naive is not included)"
 
-	@echo "make profile	- Makes and runs all required files for a full profileing of our solutions, writes summary to stdout"
+	@echo "make profile	- Makes and runs all required files for a full profileing of our solutions"
 	@echo "make clean	- Cleans up the project to its base form, removing temp files and compiled versions of our solutions"
 
 # -----------------------------
 # User targets
 # -----------------------------
 
-test: clean_autotest naive_autotest all_autotest write_default_input compute_output
+test: default_autotest
 	futhark test --backend=$(BACKEND) $(TESTFILE)
+	@$(MAKE) -s test_generic_extra
 
-bench:
+bench: default_autobench
 	futhark bench --backend=$(BACKEND) $(TESTFILE)
+	@$(MAKE) -s bench_cub
 
-profile:
-	futhark bench --backend=$(BACKEND) $(TESTFILE) --json $(JSONFILE).json -P $(TESTFILE)
+profile: default_autotest $(TESTFILE)
+	futhark bench --backend=$(BACKEND) --json $(JSONFILE).json -P $(TESTFILE)
 	futhark profile $(JSONFILE).json
-	cat ./$(JSONFILE).prof/human/test1.in.summary
-	cat ./$(JSONFILE).prof/human_optimal/test1.in.summary
-	cat ./$(JSONFILE).prof/compiler/test1.in.summary
-
-
-test_generic: test_generic.fut make_generic_f32
-	futhark test --backend=${BACKEND} $<
-	futhark test --backend=$(BACKEND) $(TESTFILE)
-
-make_generic_f32: input make_input naive
-	@echo 'import "generic_f32"' > $(TESTFILE)
-	@echo "-- ==" >> $(TESTFILE)
-	@echo "-- entry: human_generic" >> $(TESTFILE)
-	@filenum=1 ; \
-	for t in $(TESTS) ; do \
-		./make_input -n  $$t -m 100000 -f | ./format_input -f > test$$filenum.in ; \
-		cat test$$filenum.in | ./naive 2> /dev/null 1> test$$filenum.out ; \
-		echo "-- compiled input @ test$$filenum.in" >> $(TESTFILE) ; \
-		echo "-- output @ test$$filenum.out" >> $(TESTFILE) ; \
-		echo "--" >> $(TESTFILE) ; \
-		((filenum=filenum+1)) ; \
-	done 
-	echo "entry human_generic = generic_f32.run " >> $(TESTFILE)
-
-naive: naive.fut
-	futhark ${BACKEND} $<
-
-naive_compiler: naiveCompiler.fut
-	futhark ${BACKEND} $<
+	@echo "The following summary files were produced:"
+	@for d in ./$(JSONFILE).prof/*/ ; do \
+		for f in $$d*.summary ; do \
+			echo $$f ; \
+		done \
+	done
 
 # -----------------------------
 # Autotest generation
@@ -73,20 +59,35 @@ naive_compiler: naiveCompiler.fut
 clean_autotest:
 	@echo > $(TESTFILE)
 
-compute_output:
-	@(cat test1.in | futhark run naive.fut > test1.out 2>/dev/null)
+test_generic_extra: testing/test_generic.fut
+	futhark test --backend=${BACKEND} $<
 
-all_autotest: clean_autotest input \
-	compiler_autotest human_autotest human_optimal_autotest
+naive: naive.fut
+	futhark ${BACKEND} $<
 
-write_default_input:
-	@echo "TESTS = $(TESTS), SEGMENT_SIZE = $(SEGMENT_SIZE)"
-	@echo "Generating test data, may take a while if array size is at 10M and above..."
-	@filenum=1 ; \
-	for t in $(TESTS) ; do \
-		./make_input -n  $$t -m $(SEGMENT_SIZE) -f | ./format_input -f > test$$filenum.in ; \
-		((filenum=filenum+1)) ; \
+compute_output: naive
+	@echo "Computing test .out file"
+	@fileindex=1 ; \
+	for t in $(ARRAY_SIZES) ; do \
+		cat "test"$$fileindex"f.in" | ./naive > "test"$$fileindex"f.out" 2>/dev/null ; \
+		((fileindex++)) ; \
 	done 
+	@echo "Finished generating test data expected results"
+
+all_autotest: 
+
+write_default_input: make_input format_input
+	@echo "ARRAY_SIZES = $(ARRAY_SIZES), SEGMENT_SIZE = $(SEGMENT_SIZE)"
+	@echo "Generating test data."
+	@fileindex=1 ; \
+	for t in $(ARRAY_SIZES) ; do \
+		if ((t > 500000)) && ((e == 0)) ; then \
+			echo "Generating a large array size will take a bit, please wait. (SIZE = $$t)" ; \
+		fi ; \
+		./make_input -n $$t -m $(SEGMENT_SIZE) -u > test$$fileindex.in ; \
+		cat test$$fileindex.in | ./format_input -u > "test"$$fileindex"f.in" ; \
+		((fileindex++)) ; \
+	done
 	@echo "Finished generating test data"
 
 # https://medium.com/@ganga.jaiswal/understanding-user-defined-functions-in-makefiles-1f30c082d4de
@@ -95,30 +96,62 @@ define GENERATE_AUTOTEST
 	echo 'import "$(1)"' >> $(TESTFILE); \
 	echo "-- ==" >> $(TESTFILE); \
 	echo "-- entry: $(1)" >> $(TESTFILE); \
-	filenum=1; \
-	for t in $(TESTS); do \
-		echo "-- compiled input @ test$$filenum.in" >> $(TESTFILE); \
-		echo "-- output @ test$$filenum.out" >> $(TESTFILE); \
+	fileindex=1; \
+	for t in $(ARRAY_SIZES); do \
+		echo "-- compiled input @ test"$$fileindex"$(f).in" >> $(TESTFILE); \
+		echo "-- output @ test"$$fileindex".out" >> $(TESTFILE); \
 		echo "--" >> $(TESTFILE); \
-		((filenum=filenum+1)); \
+		((fileindex++)) ; \
 	done; \
-	echo "entry $(1) = $(1).rankSearchBatch" >> $(TESTFILE)
+	echo "entry $(1) = $(1)_$(2)" >> $(TESTFILE)
 endef
 
 naive_autotest:
-	@$(call GENERATE_AUTOTEST,naive)
+	@$(call GENERATE_AUTOTEST,naive,f)
 
 human_autotest:
-	@$(call GENERATE_AUTOTEST,human)
+	@$(call GENERATE_AUTOTEST,human,f)
 
 human_optimal_autotest:
-	@$(call GENERATE_AUTOTEST,human_optimal)
+	@$(call GENERATE_AUTOTEST,human_optimal,f)
 
 compiler_autotest:
-	@$(call GENERATE_AUTOTEST,compiler)
+	@$(call GENERATE_AUTOTEST,compiler,f)
 
 generic_autotest:
-	@$(call GENERATE_AUTOTEST,human_generic)
+	@$(call GENERATE_AUTOTEST,human_generic_f32,f)
+
+# -----------------------------
+# Autobenching
+# -----------------------------
+
+define GENERATE_AUTOBENCH
+	echo 'import "$(1)"' >> $(TESTFILE); \
+	echo "-- ==" >> $(TESTFILE); \
+	echo "-- entry: $(1)" >> $(TESTFILE); \
+	fileindex=1; \
+	for t in $(ARRAY_SIZES); do \
+		echo "-- compiled input @ test"$$fileindex"f.in" >> $(TESTFILE); \
+		echo "--" >> $(TESTFILE); \
+		((fileindex++)) ; \
+	done; \
+	echo "entry $(1) = $(1)_$(2)" >> $(TESTFILE)
+endef
+
+naive_autobench:
+	@$(call GENERATE_AUTOBENCH,naive,f)
+
+human_autobench:
+	@$(call GENERATE_AUTOBENCH,human,f)
+
+human_optimal_autobench:
+	@$(call GENERATE_AUTOBENCH,human_optimal,f)
+
+compiler_autobench:
+	@$(call GENERATE_AUTOBENCH,compiler,f)
+
+generic_autobench:
+	@$(call GENERATE_AUTOBENCH,human_generic,f)
 
 # -----------------------------
 # Cub benching
@@ -126,19 +159,20 @@ generic_autotest:
 # https://stackoverflow.com/questions/35636229/while-read-line-with-grep, tror det er okay måde at gøre det på,
 # men er bare script kitty på hvordanever det her virker
 # Og goated at man kan fjerne prefix og suffix med pattern matching https://stackoverflow.com/questions/16623835/remove-a-fixed-prefix-suffix-from-a-string-in-bash
-bench_cub:
+bench_cub: test1.in
 	@echo "$0"
-	@echo "$$(tput bold)sorting_test.cu (NVIDIA CUB Segmented Sorting):$$(tput sgr0)"
-	@echo "Running CUB sort with SIZE=$(TESTS), SEGMENT_SIZE=$(SEGMENT_SIZE)"
-	@runnum=1 ; \
-	for t in $(TESTS) ; do \
-		$(MAKE) -C ./cub-code_radixsort SIZE=$$t SEGMENT_SIZE=$(SEGMENT_SIZE) | \
+	@echo "$$(tput bold)sorting_test.cu:CUB (Reference great implementation):$$(tput sgr0)"
+	@echo "Running CUB sort with ARRAY_SIZES=$(ARRAY_SIZES), SEGMENT_SIZE=$(SEGMENT_SIZE)"
+	@cd $(CUB_FOLDER) && nvcc -I$(CUB)/cub -o test-cub sorting_test.cu -Wno-deprecated-gpu-targets
+	@fileindex=1 ; \
+	for t in $(ARRAY_SIZES) ; do \
+		cat test$$fileindex.in | $(CUB_FOLDER)/test-cub | \
 		while read line; do \
 			if [ -n "$$(echo "$$line" | grep 'runs in:')" ]; then \
 				time=$${line#*runs in: }; \
 				time=$${time% us*}; \
-				echo "test$$runnum CUB bench SIZE=$$t:	$$timeμs$0"; \
-				((runnum=runnum+1)) ; \
+				echo "test$$fileindex CUB bench SIZE=$$t:	$$timeμs$0"; \
+				((fileindex++)) ; \
 			fi; \
 		done \
 	done
